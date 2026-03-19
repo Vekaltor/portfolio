@@ -27,7 +27,7 @@ jobs:
       - name: 🔨 Build Project
         run: |
           npm install
-          npm run build:prod
+          npm run build
 
       - name: 📂 Sync files
         uses: wlixcc/SFTP-Deploy-Action@v1.2.6
