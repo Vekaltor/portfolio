@@ -1,0 +1,16 @@
+body.custom-cursor-enabled,
+body.custom-cursor-enabled * {
+    cursor: none !important;
+}
+
+body.custom-cursor-disabled {
+    cursor: auto!important;
+}
+
+body.custom-cursor-disabled a,
+body.custom-cursor-disabled button,
+body.custom-cursor-disabled [role='button'],
+body.custom-cursor-disabled input[type='submit'],
+body.custom-cursor-disabled input[type='button'] {
+    cursor: pointer!important;
+}

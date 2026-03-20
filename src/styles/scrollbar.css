@@ -1,0 +1,17 @@
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--border2);
+    border-radius: 999px;
+    transition: background-color 1s ease;
+}
+
+body.is-scrolling::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+}
