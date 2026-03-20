@@ -1,4 +1,4 @@
-import {FormEvent} from "react";
+import type {FormEvent} from "react";
 import {useLang} from "../../context/LangContext.tsx";
 import {useReveal} from "../../hooks/useReveal.hook.ts";
 import Field from "./Field.tsx";

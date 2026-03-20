@@ -1,4 +1,4 @@
-import {JSX} from "react";
+import type {JSX} from "react";
 
 function ProjectChips({chips}: { chips: string[] }): JSX.Element {
     return (

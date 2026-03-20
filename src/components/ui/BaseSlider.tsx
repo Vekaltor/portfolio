@@ -13,7 +13,7 @@ export type SliderItemComponentProps<T> = {
 type BaseSliderProps<T> = {
     items: T[]
     initialIndex?: number
-    minHeightClassName?: string
+    heightClassName?: string
     slideWidthClassName?: string
     containerClassName?: string
     controlsClassName?: string
@@ -25,7 +25,7 @@ export default function BaseSlider<T>(props: BaseSliderProps<T>) {
     const {
         items,
         initialIndex = 0,
-        minHeightClassName = 'min-h-[480px]',
+        heightClassName = 'min-h-[480px]',
         slideWidthClassName = 'w-[420px]',
         containerClassName = '',
         controlsClassName = 'mt-7',
@@ -64,7 +64,7 @@ export default function BaseSlider<T>(props: BaseSliderProps<T>) {
     return (
         <div className={containerClassName}>
             <div
-                className={`relative flex items-start justify-center overflow-visible transition-[height] duration-300 ${minHeightClassName}`}
+                className={`relative flex items-start justify-center overflow-visible transition-[height] duration-300 ${heightClassName}`}
                 style={stageHeight ? {height: `${stageHeight}px`} : undefined}
             >
                 {items.map((item, index) => {

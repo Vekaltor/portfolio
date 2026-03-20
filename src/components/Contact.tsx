@@ -1,7 +1,7 @@
-import {FormEvent, useState} from 'react'
+import type {FormEvent} from 'react'
+import {useState} from 'react'
 import ContactIntro from "./contact/ContactIntro.tsx";
 import ContactForm from "./contact/ContactForm.tsx";
-
 
 
 export default function Contact() {
@@ -26,7 +26,7 @@ export default function Contact() {
 
             <div
                 className="mx-auto grid w-full items-center max-w-[1240px] flex-1 grid-cols-1 gap-16 px-6 md:px-16 min-[980px]:grid-cols-2 min-[980px]:gap-[7rem]">
-                <ContactIntro/>
+                <ContactIntro sent={sent} onSubmit={handleSubmit}/>
                 <div className="hidden min-[980px]:block">
                     <ContactForm sent={sent} onSubmit={handleSubmit}/>
                 </div>
