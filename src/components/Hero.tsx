@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { useLang } from '../context/LangContext'
-import { useTyper } from '../hooks/useTyper'
-import { useCounter } from '../hooks/useCounter'
+import { useTyperHook } from '../hooks/useTyper.hook.ts'
+import { useCounter } from '../hooks/useCounter.hook.ts'
 import { HERO_PILLS } from '../data/content'
+import SocialBtn from './hero/SocialBtn'
+import StatCard from './hero/StatCard'
 
 export default function Hero() {
   const { t, lang } = useLang()
@@ -13,7 +15,7 @@ export default function Hero() {
     ? ['Developer', 'w React', 'w Angular', 'Full-Stack']
     : ['Developer', 'in React', 'in Angular', 'Full-Stack']
 
-  const typed = useTyper(vocab)
+  const typed = useTyperHook(vocab)
   const exp    = useCounter(3, 650)
   const com    = useCounter(2, 780)
 
@@ -140,31 +142,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
-}
-
-/* ── Sub-components ── */
-interface SocialBtnProps {
-  href: string
-  title: string
-  children: React.ReactNode
-}
-function SocialBtn({ href, title, children }: SocialBtnProps) {
-  return (
-    <a href={href} target="_blank" rel="noreferrer" title={title}
-      className="w-10 h-10 rounded-[10px] border border-[var(--border)] bg-[var(--bg2)] flex items-center justify-center text-[var(--text3)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:-translate-y-0.5 hover:bg-[var(--accentbg)] hover:shadow-[0_8px_20px_rgba(74,222,128,.15)] transition-all">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">{children}</svg>
-    </a>
-  )
-}
-
-interface StatCardProps { num: string; label: string; cls: string; sub?: string }
-function StatCard({ num, label, cls, sub }: StatCardProps) {
-  return (
-    <div className={`${cls} flex-1 text-center bg-[var(--bg2)] border border-[var(--border)] rounded-xl py-[.9rem] px-2 hover:border-[var(--accent)] hover:-translate-y-0.5 transition-all`}>
-      <div className="font-display text-[1.75rem] font-extrabold text-[var(--accent)] leading-none">{num}</div>
-      <div className="text-[.58rem] text-[var(--text3)] mt-[.3rem] font-medium uppercase tracking-[.07em]">{label}</div>
-      {sub && <span className="block text-[.54rem] font-bold text-[var(--accent)] tracking-[.05em] uppercase mt-[.2rem] opacity-80">{sub}</span>}
-    </div>
   )
 }
