@@ -8,7 +8,7 @@ import Contact from '../Contact'
 
 function AppContent() {
     return (
-        <main>
+        <main className="overflow-hidden w-full max-w-[100svw]">
             <Hero/>
             <Divider/>
             <About/>

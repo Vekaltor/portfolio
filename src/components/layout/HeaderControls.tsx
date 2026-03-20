@@ -15,12 +15,9 @@ function HeaderControls() {
 
     if (isMobile) {
         return (
-            <div className="flex flex-col gap-4">
-                <div className="flex flex-wrap gap-3 justify-end">
-                    <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} isMobile={true}/>
-                    <CursorSwitcher customCursor={customCursor} toggleCursor={toggleCursor} isMobile={true}/>
-                    <LanguageSwitcher lang={lang} toggle={toggle} isMobile={true}/>
-                </div>
+            <div className="flex gap-3 items-center">
+                <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} isMobile={true}/>
+                <LanguageSwitcher lang={lang} toggle={toggle} isMobile={true}/>
                 <DownloadCvButton isMobile={true}/>
             </div>
         )

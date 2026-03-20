@@ -12,7 +12,7 @@ function StatCard(props: StatCardProps) {
     return (
         <div
             className={classNames(
-                'flex-1 rounded-[18px] border border-[var(--border)] bg-[var(--bg2)] px-4 py-4 text-center transition-all duration-300',
+                'w-fit flex-1 rounded-[18px] border border-[var(--border)] bg-[var(--bg2)] px-4 py-4 text-center transition-all duration-300',
                 'hover:-translate-y-0.5 hover:border-[var(--border2)] hover:bg-[var(--bg3)]',
                 className
             )}

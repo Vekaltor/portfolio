@@ -5,7 +5,7 @@ import SocialBtn from './SocialBtn'
 
 function HeroSocials() {
     return (
-        <div className="hero-init hi5 flex gap-[.65rem]">
+        <div className="hero-init hi5 flex gap-[.65rem] justify-end md:justify-start">
             <SocialBtn href="https://github.com/Vekaltor" title="GitHub">
                 <GitHubIcon className="w-4 h-4 stroke-current"/>
             </SocialBtn>

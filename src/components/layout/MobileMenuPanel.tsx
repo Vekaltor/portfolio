@@ -12,7 +12,7 @@ function MobileMenuPanel(props: MobileMenuPanelProps) {
     return (
         <div
             className={classNames(
-                'fixed inset-0 z-[950] md:hidden transition-opacity duration-300',
+                'fixed inset-0 z-[950] md:hidden transition-opacity duration-300 overflow-hidden',
                 isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
             )}
             aria-hidden={!isOpen}
@@ -51,7 +51,7 @@ function MobileMenuPanel(props: MobileMenuPanelProps) {
 
             <div
                 className={classNames(
-                    'transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]',
+                    'transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] overflow-y-auto h-full',
                     isOpen ? 'translate-x-0 opacity-100 delay-150' : 'translate-x-10 opacity-0'
                 )}
             >

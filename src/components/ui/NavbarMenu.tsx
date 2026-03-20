@@ -19,7 +19,7 @@ function NavbarMenu(props: NavbarMenuProps) {
             <ul
                 className={classNames(
                     'flex',
-                    isMobile ? 'flex-col gap-3' : 'items-center gap-8'
+                    isMobile ? 'flex-col' : 'items-center gap-8'
                 )}
             >
                 {NAV_ITEMS.map((item, index) => {
@@ -36,9 +36,9 @@ function NavbarMenu(props: NavbarMenuProps) {
                                 )}
                             >
                                 {isMobile ? (
-                                    <>
+                                    <div className="flex justify-between w-full gap-3">
                                         <span
-                                            className="text-[1.9rem] leading-[1.02] font-semibold tracking-[-0.045em] text-[var(--text)]">
+                                            className="text-[1.475rem] leading-[1.02] font-semibold tracking-[-0.045em] text-[var(--text)] truncate">
                                             {t(`nav.${item.key}` as `nav.${NavItemKey}`)}
                                         </span>
 
@@ -46,7 +46,7 @@ function NavbarMenu(props: NavbarMenuProps) {
                                             className="text-[0.78rem] font-medium text-[var(--text3)] transition-transform duration-300 group-hover:translate-x-1">
                                             0{index + 1}
                                         </span>
-                                    </>
+                                    </div>
                                 ) : (
                                     t(`nav.${item.key}` as `nav.${NavItemKey}`)
                                 )}

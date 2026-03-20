@@ -17,7 +17,7 @@ function LanguageSwitcher(props: LanguageSwitcherProps) {
                 "text-[.7rem] font-bold tracking-[.06em] h-[34px] px-[.85rem] rounded-lg border",
                 "border-[var(--border2)] text-[var(--text2)] hover:border-[var(--accent)]",
                 "hover:text-[var(--accent)] transition-all cursor-none",
-                isMobile && "!h-[54px] !px-[1.7rem] !text-[1rem]"
+                isMobile && "!h-[50px] !px-[1.4rem] !text-[1rem]"
             )}
         >
             {lang === 'pl' ? 'EN' : 'PL'}

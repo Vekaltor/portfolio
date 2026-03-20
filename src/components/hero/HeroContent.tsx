@@ -14,7 +14,10 @@ function HeroContent(props: HeroContentProps) {
 
     return (
         <div>
-            <HeroStatusJobBadge/>
+            <div className="hidden md:block">
+                <HeroStatusJobBadge/>
+            </div>
+
 
             <h1 className="hero-init hi2 mb-[1.4rem] font-display text-[clamp(3.5rem,6.5vw,7rem)] font-extrabold leading-[.9] tracking-[-.06em] text-[var(--text)]">
                 Frontend
