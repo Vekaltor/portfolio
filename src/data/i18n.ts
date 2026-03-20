@@ -1,7 +1,7 @@
 export type TranslationKey =
     | 'nav.about' | 'nav.work' | 'nav.test' | 'nav.contact' | 'nav.home'
     | 'hero.badge' | 'hero.sub' | 'hero.cta1' | 'hero.cta2'
-    | 'stat.exp' | 'stat.com'
+    | 'stat.exp' | 'stat.com' | 'stat.certValue' | 'stat.certLabel'
     | 'about.eyebrow' | 'about.title' | 'about.p1' | 'about.p2' | 'about.p3'
     | 'tl.now' | 'tl.r1' | 'tl.r2'
     | 'tl.bbcr.desc' | 'tl.hy.role' | 'tl.hy.desc' | 'tl.pl.desc'
@@ -35,11 +35,13 @@ const pl: Translations = {
     'nav.contact': 'Kontakt',
     'nav.home': 'Strona główna',
     'hero.badge': 'Otwarty na oferty pracy',
-    'hero.sub': 'Kamil Wójcik — 3 lata doświadczenia komercyjnego w React i Angular. Szukam miejsca gdzie mogę pisać dobry kod i rozwijać się w kierunku Full-Stack.',
+    'hero.sub': 'Kamil Wójcik - 3 lata doświadczenia w React i Angular. Szukam miejsca gdzie mogę pisać dobry kod i rozwijać się w kierunku <span class="font-bold">Full-Stack</span>.',
     'hero.cta1': 'Zobacz projekty',
     'hero.cta2': 'Skontaktuj się ze mną',
-    'stat.exp': 'Lata exp',
-    'stat.com': 'Komercyjnie',
+    'stat.exp': 'Lata doświadczenia',
+    'stat.com': 'Lat pracy komercyjnej',
+    'stat.certValue': 'Finalista',
+    'stat.certLabel': '2024 </br> HackYeah',
     'about.eyebrow': 'O mnie',
     'about.title': 'Piszę kod, który robi różnicę.',
     'about.p1': 'Student Informatyki na <strong>Politechnice Lubelskiej</strong> i Frontend Developer z 3-letnim doświadczeniem komercyjnym w <strong>BBCR sp. z o.o.</strong>',
@@ -120,15 +122,17 @@ const pl: Translations = {
 const en: Translations = {
     'nav.about': 'About',
     'nav.work': 'Work',
-    'nav.test': 'Testimonials',
+    'nav.test': 'Recommendations',
     'nav.contact': 'Contact',
     'nav.home': 'Home',
     'hero.badge': 'Open to job offers',
-    'hero.sub': 'Kamil Wójcik — 3 years of commercial experience in React and Angular. Looking for a place to write good code and grow towards Full-Stack.',
+    'hero.sub': 'Kamil Wójcik - 3 years of experience in React and Angular. Looking for a place to write good code and grow towards <span class="font-bold">Full-Stack</span>.',
     'hero.cta1': 'View projects',
     'hero.cta2': 'Get in touch',
-    'stat.exp': 'Years exp',
-    'stat.com': 'Commercial',
+    'stat.exp': 'Years of experience',
+    'stat.com': 'Commercial experience',
+    'stat.certValue': 'Finalist',
+    'stat.certLabel': '2024 </br> HackYeah',
     'about.eyebrow': 'About me',
     'about.title': 'Writing code that makes a difference.',
     'about.p1': 'Computer Science student at <strong>Lublin University of Technology</strong> and Frontend Developer with 3+ years of commercial experience at <strong>BBCR sp. z o.o.</strong>',
@@ -170,7 +174,7 @@ const en: Translations = {
     'cc2.s': 'Dynamic routing (OSPF), VLAN networks, STP and EtherChannel.',
     'cc3.t': 'Cisco CCNA 3 — Enterprise Networking',
     'cc3.s': 'Advanced routing protocols, network security, NAT.',
-    'test.eyebrow': 'Testimonials',
+    'test.eyebrow': 'Recommendations',
     'test.title': 'What others say.',
     't1q': 'Kamil stands out for his proactive approach and solid skills. He always delivered on time with attention to code quality.',
     't1r': 'Tech Lead · BBCR sp. z o.o.',

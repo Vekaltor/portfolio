@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Project } from '../../types'
 import type { TranslationKey } from '../../data/i18n'
-import { PROJECTS } from '../../data/content'
+import { PROJECTS } from '../../constants/content.ts'
 import SliderBtn from './SliderBtn'
 
 export default function ProjectSlider({ t }: { t: (k: TranslationKey) => string }) {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../context/LangContext'
 import { useReveal } from '../hooks/useReveal.hook.ts'
-import { LANG_ICONS, FW_ICONS, TOOL_ICONS, LEARN_ICONS } from '../data/content'
+import { LANG_ICONS, FW_ICONS, TOOL_ICONS, LEARN_ICONS } from '../constants/content.ts'
 import type { TechIcon } from '../types'
 import type { TranslationKey } from '../data/i18n'
 import type { TabId } from './work/types'

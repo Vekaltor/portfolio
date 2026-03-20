@@ -1,6 +1,6 @@
 import type { Certificate } from '../../types'
 import type { TranslationKey } from '../../data/i18n'
-import { CERTS } from '../../data/content'
+import { CERTS } from '../../constants/content.ts'
 
 export default function CertGrid({ t }: { t: (k: TranslationKey) => string }) {
   return (

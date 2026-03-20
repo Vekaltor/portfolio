@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../context/LangContext'
 import { useReveal } from '../hooks/useReveal.hook.ts'
-import { TESTIMONIAL_SLIDES } from '../data/content'
+import { TESTIMONIAL_SLIDES } from '../constants/content.ts'
 import TestCard from './testimonials/TestCard'
 import NavBtn from './testimonials/NavBtn'
 

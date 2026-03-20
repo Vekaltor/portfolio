@@ -39,12 +39,12 @@ export const LEARN_ICONS: TechIcon[] = [
   icon('amazonwebservices/amazonwebservices-plain-wordmark.svg', 'AWS'),
 ]
 
-export const HERO_PILLS: TechIcon[] = [
+export const HERO_MAIN_TECHNOLOGY_PILLS: TechIcon[] = [
   icon('react/react-original.svg', 'React'),
   icon('angularjs/angularjs-plain.svg', 'Angular'),
   icon('typescript/typescript-plain.svg', 'TypeScript'),
-  icon('tailwindcss/tailwindcss-plain.svg', 'Tailwind'),
-  icon('nextjs/nextjs-plain.svg', 'Next.js', true),
+  icon('tailwindcss/tailwindcss-original.svg', 'Tailwind CSS'),
+  icon('primeng/primeng-original.svg', 'PrimeNG'),
 ]
 
 export const TIMELINE_ITEMS: TimelineItem[] = [
