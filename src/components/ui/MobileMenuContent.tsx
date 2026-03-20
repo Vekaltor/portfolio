@@ -1,4 +1,4 @@
-import {useLang} from '../../context/LangContext.tsx'
+import { useLang } from '../../context/LangContext.tsx'
 import NavbarMenu from '../ui/NavbarMenu.tsx'
 import HeaderControls from "../layout/HeaderControls.tsx";
 
@@ -7,8 +7,8 @@ interface MobileMenuContentProps {
 }
 
 function MobileMenuContent(props: MobileMenuContentProps) {
-    const {onNavigate} = props
-    const {t} = useLang()
+    const { onNavigate } = props
+    const { t } = useLang()
 
     return (
         <div className="relative z-10 flex min-h-dvh flex-col px-6 pb-8 pt-28">
@@ -24,13 +24,18 @@ function MobileMenuContent(props: MobileMenuContentProps) {
                 </div>
 
                 <div className="flex-1">
-                    <NavbarMenu onNavigate={onNavigate} isMobile/>
+                    <NavbarMenu onNavigate={onNavigate} isMobile />
                 </div>
 
-                <div className="my-8 h-px w-full bg-[color:var(--border)]"/>
+                <div className="my-8 h-px w-full bg-[var(--border)]" />
 
                 <div
-                    className="rounded-[28px] border border-[var(--border)] bg-[rgba(255,255,255,0.03)] p-4 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-md">
+                    className="rounded-[28px] border border-[var(--border)] p-4 backdrop-blur-md"
+                    style={{
+                        background: 'var(--mobile-menu-card)',
+                        boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                    }}
+                >
                     <div className="mb-4">
                         <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[var(--text3)]">
                             {t('mobileMenu.quickActions')}

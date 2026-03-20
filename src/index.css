@@ -16,6 +16,13 @@
     --accentd: #22c55e;
     --accentbg: rgba(74, 222, 128, .09);
     --proj-shadow: 0 32px 72px rgba(0, 0, 0, .55);
+
+    --overlay: rgba(2, 4, 3, 0.10);
+    --overlay-blur: rgba(2, 4, 3, 0.14);
+    --mobile-menu-panel: rgba(4, 7, 6, 0.74);
+    --mobile-menu-card: rgba(255, 255, 255, 0.03);
+    --mobile-menu-shadow: -50px 0 140px rgba(0, 0, 0, 0.24);
+
     font-size: 18px;
 }
 
@@ -30,6 +37,12 @@
     --text3: #7878a0;
     --accentbg: rgba(74, 222, 128, .1);
     --proj-shadow: 0 8px 32px rgba(0, 0, 0, .12);
+
+    --overlay: rgba(255, 255, 255, 0.16);
+    --overlay-blur: rgba(255, 255, 255, 0.26);
+    --mobile-menu-panel: rgba(255, 255, 255, 0.72);
+    --mobile-menu-card: rgba(255, 255, 255, 0.42);
+    --mobile-menu-shadow: -50px 0 140px rgba(0, 0, 0, 0.10);
 }
 
 /* ── RESET ── */
