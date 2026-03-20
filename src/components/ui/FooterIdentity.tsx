@@ -1,8 +1,4 @@
-import { useLang } from '../../context/LangContext'
-
 function FooterIdentity() {
-    const { t } = useLang()
-
     return (
         <div>
             <p className="text-[.92rem] font-bold tracking-[-0.02em] text-[var(--text)]">

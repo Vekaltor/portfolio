@@ -1,48 +1,48 @@
-import type { TechIcon, TimelineItem, Project, Certificate, TestimonialCard } from '../types'
+import type {TechIcon} from "../types/techIcon.interface.ts";
+import type {TimelineItem} from "../types/timeLineItem.interface.ts";
+import type {Project} from "../types/project.interface.ts";
+import type {Certificate} from "../types/certificate.interface.ts";
+import type {TestimonialCard} from "../types/testimonialCard.interface.ts";
 
 const BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/'
 const icon = (src: string, name: string, invert = false): TechIcon => ({ src: `${BASE}${src}`, name, invert })
 
 export const LANG_ICONS: TechIcon[] = [
-  icon('typescript/typescript-plain.svg', 'TypeScript'),
-  icon('javascript/javascript-plain.svg', 'JavaScript'),
-  icon('html5/html5-plain.svg', 'HTML5'),
-  icon('css3/css3-plain.svg', 'CSS3'),
-  icon('tailwindcss/tailwindcss-plain.svg', 'Tailwind'),
+  icon('typescript/typescript-original.svg', 'TypeScript'),
+  icon('javascript/javascript-original.svg', 'JavaScript'),
+  icon('html5/html5-original.svg', 'HTML5'),
+  icon('css3/css3-original.svg', 'CSS3'),
+  icon('mysql/mysql-original.svg', 'MySQL'),
 ]
 
 export const FW_ICONS: TechIcon[] = [
   icon('react/react-original.svg', 'React'),
-  icon('angularjs/angularjs-plain.svg', 'Angular'),
-  icon('nextjs/nextjs-plain.svg', 'Next.js', true),
+  icon('angularjs/angularjs-original.svg', 'Angular'),
   icon('redux/redux-original.svg', 'Redux'),
-  icon('vuejs/vuejs-plain.svg', 'Vue.js'),
-  icon('flutter/flutter-plain.svg', 'FlutterFlow'),
+  icon('vuejs/vuejs-original.svg', 'Vue.js'),
+  icon('tailwindcss/tailwindcss-original.svg', 'Tailwind CSS'),
+  icon('primeng/primeng-original.svg', 'PrimeNG'),
 ]
 
 export const TOOL_ICONS: TechIcon[] = [
-  icon('docker/docker-plain.svg', 'Docker'),
-  icon('nodejs/nodejs-plain.svg', 'Node.js'),
-  icon('mysql/mysql-plain.svg', 'MySQL'),
-  icon('git/git-plain.svg', 'Git'),
-  icon('vitejs/vitejs-plain.svg', 'Vite'),
+  icon('docker/docker-original.svg', 'Docker'),
+  icon('nodejs/nodejs-original.svg', 'Node.js'),
+  icon('git/git-original.svg', 'Git'),
+  icon('vitejs/vitejs-original.svg', 'Vite'),
   icon('github/github-original.svg', 'GitHub', true),
-  icon('gitlab/gitlab-plain.svg', 'GitLab'),
-  icon('postman/postman-plain.svg', 'Postman'),
-  icon('intellij/intellij-plain.svg', 'IntelliJ'),
+  icon('gitlab/gitlab-original.svg', 'GitLab'),
+  icon('postman/postman-original.svg', 'Postman'),
+  icon('intellij/intellij-original.svg', 'IntelliJ'),
 ]
 
 export const LEARN_ICONS: TechIcon[] = [
-  icon('threejs/threejs-original.svg', 'Three.js', true),
-  icon('graphql/graphql-plain.svg', 'GraphQL'),
-  icon('rust/rust-plain.svg', 'Rust', true),
-  icon('amazonwebservices/amazonwebservices-plain-wordmark.svg', 'AWS'),
+  icon('flutter/flutter-original.svg', 'Flutter'),
 ]
 
 export const HERO_MAIN_TECHNOLOGY_PILLS: TechIcon[] = [
   icon('react/react-original.svg', 'React'),
-  icon('angularjs/angularjs-plain.svg', 'Angular'),
-  icon('typescript/typescript-plain.svg', 'TypeScript'),
+  icon('angularjs/angularjs-original.svg', 'Angular'),
+  icon('typescript/typescript-original.svg', 'TypeScript'),
   icon('tailwindcss/tailwindcss-original.svg', 'Tailwind CSS'),
   icon('primeng/primeng-original.svg', 'PrimeNG'),
 ]
@@ -108,10 +108,42 @@ export const PROJECTS: Project[] = [
 ]
 
 export const CERTS: Certificate[] = [
-  { icon: '🏆', titleKey: 'chy.t', subtitleKey: 'chy.s', linkKey: 'chy.l', issuer: 'HackYeah', year: '2024', href: '#' },
-  { icon: '📡', titleKey: 'cc1.t', subtitleKey: 'cc1.s', linkKey: 'ccl', issuer: 'Cisco NetAcad', year: '2023', href: '#' },
-  { icon: '🔀', titleKey: 'cc2.t', subtitleKey: 'cc2.s', linkKey: 'ccl', issuer: 'Cisco NetAcad', year: '2023', href: '#' },
-  { icon: '🏢', titleKey: 'cc3.t', subtitleKey: 'cc3.s', linkKey: 'ccl', issuer: 'Cisco NetAcad', year: '2024', href: '#' },
+  {
+    titleKey: 'chy.t',
+    subtitleKey: 'chy.s',
+    linkKey: 'chy.l',
+    issuer: 'HackYeah',
+    year: '2024',
+    href: '/HackYeah2024-cert.pdf',
+    previewSrc: '/HackYeah2024-cert-preview.jpg',
+  },
+  // {
+  //   titleKey: 'cc1.t',
+  //   subtitleKey: 'cc1.s',
+  //   linkKey: 'ccl',
+  //   issuer: 'Cisco NetAcad',
+  //   year: '2023',
+  //   href: '#',
+  //   previewSrc: '/certs/ccna1.jpg',
+  // },
+  // {
+  //   titleKey: 'cc2.t',
+  //   subtitleKey: 'cc2.s',
+  //   linkKey: 'ccl',
+  //   issuer: 'Cisco NetAcad',
+  //   year: '2023',
+  //   href: '#',
+  //   previewSrc: '/certs/ccna2.jpg',
+  // },
+  // {
+  //   titleKey: 'cc3.t',
+  //   subtitleKey: 'cc3.s',
+  //   linkKey: 'ccl',
+  //   issuer: 'Cisco NetAcad',
+  //   year: '2024',
+  //   href: '#',
+  //   previewSrc: '/certs/ccna3.jpg',
+  // },
 ]
 
 export const TESTIMONIAL_SLIDES: TestimonialCard[][] = [

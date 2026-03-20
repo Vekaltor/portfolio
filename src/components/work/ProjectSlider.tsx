@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import type { Project } from '../../types'
-import type { TranslationKey } from '../../data/i18n'
 import { PROJECTS } from '../../constants/content.ts'
 import SliderBtn from './SliderBtn'
+import type {TranslationKey} from "../../data/i18n.ts";
+import type {Project} from "../../types/project.interface.ts";
+import {useLang} from "../../context/LangContext.tsx";
 
-export default function ProjectSlider({ t }: { t: (k: TranslationKey) => string }) {
-  const [active, setActive] = useState(1)
-  const n = PROJECTS.length
+export default function ProjectSlider() {
+  const [active, setActive] = useState(1);
+    const { t } = useLang();
+    const n = PROJECTS.length
 
   const getState = (i: number) => {
     if (i === active) return 'active'

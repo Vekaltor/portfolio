@@ -1,6 +1,6 @@
 import {createContext, type ReactNode, useContext, useState} from 'react'
 import {type TranslationKey, translations} from '../data/i18n'
-import type {Lang} from '../types'
+import type {Lang} from "../types/lang.type.ts";
 
 interface LangContextValue {
     lang: Lang

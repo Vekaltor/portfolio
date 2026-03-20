@@ -1,8 +1,8 @@
-import type {Theme} from '../types'
 import useTheme from "../hooks/useTheme.hook.ts";
 import useCursor from "../hooks/useCursor.hook.ts";
 import type {Dispatch, ReactNode, SetStateAction} from "react";
 import {createContext} from "react";
+import type {Theme} from "../types/theme.type.ts";
 
 interface AppUIContextValue {
     theme: Theme

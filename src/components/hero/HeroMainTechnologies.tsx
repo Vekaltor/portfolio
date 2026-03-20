@@ -4,7 +4,7 @@ const HERO_PILL_CLASSES = ['p1', 'p2', 'p3', 'p4', 'p5'] as const
 
 function HeroMainTechnologies() {
     return (
-        <div className="mb-8 flex flex-wrap gap-[.6rem]">
+        <div className="mb-8 hidden flex-wrap gap-[.6rem] md:flex">
             {HERO_MAIN_TECHNOLOGY_PILLS.map((pill, index) => {
                 return (
                     <span

@@ -1,6 +1,6 @@
-import type { Theme } from '../../types'
 import MoonIcon from '@assets/icons/moon.svg?react'
 import SunIcon from '@assets/icons/sun.svg?react'
+import type {Theme} from "../../types/theme.type.ts";
 
 interface ThemeSwitcherProps {
     theme: Theme
