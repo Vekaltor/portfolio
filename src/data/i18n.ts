@@ -11,7 +11,6 @@ export type TranslationKey =
     | 'stack.motivational'
     | 'p1.b' | 'p1.t' | 'p1.d'
     | 'p2.b' | 'p2.t' | 'p2.d'
-    | 'p3.b' | 'p3.t' | 'p3.d'
     | 'chy.t' | 'chy.s' | 'chy.l'
     | 'cc1.t' | 'cc1.s' | 'cc2.t' | 'cc2.s' | 'cc3.t' | 'cc3.s' | 'ccl'
     | 'test.eyebrow' | 'test.title'
@@ -64,15 +63,12 @@ const pl: Translations = {
     'stack.cat.tools': 'Narzędzia & Infra',
     'stack.cat.learn': 'Chcę się nauczyć',
     'stack.motivational': "Technologia się nie zatrzymuje - <span class='text-[var(--accent)] not-italic font-semibold'>ja też nie.</span> Każdy sprint to nowe umiejętności.",
-    'p1.b': 'HackYeah 2024',
-    'p1.t': 'CountryBike',
-    'p1.d': 'Projekt finalny HackYeah 2024 — największego hackathonu w Europie. Teamwork, kreatywność i kod pod presją czasu.',
-    'p2.b': 'Praca inżynierska',
-    'p2.t': 'No-code Automation SaaS',
-    'p2.d': 'Platforma do tworzenia automatyzacji procesów biznesowych bez kodu. Własne rozwiązanie klasy SaaS.',
-    'p3.b': 'Komercyjny',
-    'p3.t': 'Projekt BBCR',
-    'p3.d': 'Dedykowana aplikacja webowa dla klienta w Angular z PrimeNG.',
+    'p1.b': 'Praca inżynierska',
+    'p1.t': 'No-code Automation SaaS',
+    'p1.d': 'Platforma do automatyzacji procesów biznesowych w modelu no-code. Zespołowy projekt inżynierski oparty o architekturę SaaS, integracje i wizualny edytor przepływów.',
+    'p2.b': 'Projekt własny',
+    'p2.t': 'Ravintola',
+    'p2.d': 'Aplikacja webowa rozwijana jako projekt full-stack. Interfejs zbudowany w React i TypeScript, z naciskiem na czytelny UI, modularność i praktyczne podejście do architektury aplikacji.',
     'chy.t': 'Finalista HackYeah 2024',
     'chy.s': 'Największy hackathon w Europie · projekt CountryBike. Praca zespołowa, kreatywność i kod w 24h.',
     'chy.l': 'Zobacz projekt',
@@ -155,15 +151,12 @@ const en: Translations = {
     'stack.cat.tools': 'Tools & Infrastructure',
     'stack.cat.learn': 'Want to learn',
     'stack.motivational': "Technology never stop, <span class='text-[var(--accent)] not-italic font-semibold'>and neither do I.</span> Every sprint is a new skill.",
-    'p1.b': 'HackYeah 2024',
-    'p1.t': 'CountryBike',
-    'p1.d': "Finalist project at HackYeah 2024 — Europe's largest hackathon. Teamwork, creativity and code under pressure.",
-    'p2.b': 'Engineering thesis',
-    'p2.t': 'No-code Automation SaaS',
-    'p2.d': 'Platform for business process automation in no-code model. Own SaaS-class solution.',
-    'p3.b': 'Commercial',
-    'p3.t': 'BBCR Project',
-    'p3.d': 'Dedicated web app for a client in Angular with PrimeNG.',
+    'p1.b': 'Engineering thesis',
+    'p1.t': 'No-code Automation SaaS',
+    'p1.d': 'A no-code platform for automating business processes. A team engineering project built around SaaS architecture, integrations and a visual workflow editor.',
+    'p2.b': 'Personal project',
+    'p2.t': 'Ravintola',
+    'p2.d': 'A web application developed as a full-stack personal project. Built with React and TypeScript, with a strong focus on clean UI, modular structure and practical application architecture.',
     'chy.t': 'HackYeah 2024 Finalist',
     'chy.s': "Europe's largest hackathon · CountryBike project. Teamwork, creativity and code in 24h.",
     'chy.l': 'View project',

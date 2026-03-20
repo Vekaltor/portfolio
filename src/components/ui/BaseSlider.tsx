@@ -62,7 +62,7 @@ export default function BaseSlider<T>(props: BaseSliderProps<T>) {
                 })}
             </div>
 
-            {items.length > 2 && (
+            {items.length >= 2 && (
                 <div className={`flex items-center justify-center gap-5 ${controlsClassName}`}>
                     <SliderBtn onClick={goPrev} direction="prev"/>
 

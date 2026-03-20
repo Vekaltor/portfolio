@@ -1,5 +1,6 @@
 import {useReveal} from "../../hooks/useReveal.hook.ts";
 import type {TechIcon} from "../../types/techIcon.interface.ts";
+import useAppPreferences from "../../hooks/useAppPreferences.hook.ts";
 
 type IconGridItemProps = {
     item: TechIcon;
@@ -7,20 +8,20 @@ type IconGridItemProps = {
     index: number;
 };
 
-function getBaseFilter(dim: boolean, invert?: boolean) {
+function getBaseFilter(dim: boolean, invert: boolean, isLight: boolean) {
     if (dim) {
         return "grayscale(.55) brightness(.65)";
     }
 
-    if (invert) {
+    if (invert && !isLight) {
         return "invert(1)";
     }
 
     return "brightness(.85) saturate(.9)";
 }
 
-function getHoverFilter(invert?: boolean) {
-    if (invert) {
+function getHoverFilter(invert: boolean, isLight: boolean) {
+    if (invert && !isLight) {
         return "invert(1)";
     }
 
@@ -33,9 +34,11 @@ function IconGridItem({item, dim, index}: IconGridItemProps) {
         threshold: 0.12,
         rootMargin: "0px 0px -8% 0px",
     });
-
-    const baseFilter = getBaseFilter(dim, item.invert);
-    const hoverFilter = getHoverFilter(item.invert);
+    const {theme} = useAppPreferences();
+    const isLight = theme === "light";
+    const shouldInvert = Boolean(item.invert);
+    const baseFilter = getBaseFilter(dim, shouldInvert, isLight);
+    const hoverFilter = getHoverFilter(shouldInvert, isLight);
 
     return (
         <div

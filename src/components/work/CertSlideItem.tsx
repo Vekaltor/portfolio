@@ -46,7 +46,7 @@ export default function CertSlideItem(props: Props): JSX.Element {
 
                 <div className="border-t border-[var(--border)] px-4 py-3">
                     <div
-                        className="mb-1 text-[.88rem] font-semibold leading-[1.3] tracking-[-0.02em] text-[var(--text)] transition-colors group-hover:text-white">
+                        className="mb-1 text-[.88rem] font-semibold leading-[1.3] tracking-[-0.02em] text-[var(--text)] transition-colors">
                         {t(cert.titleKey as TranslationKey)}
                     </div>
 

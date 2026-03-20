@@ -54,7 +54,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     company: 'BBCR sp. z o.o.',
     roleKey: 'tl.r1',
     descKey: 'tl.bbcr.desc',
-    tags: ['React', 'Angular', 'PrimeNG', 'FlutterFlow', 'PWA', 'WCAG', 'CI/CD', 'REST API'],
+    tags: ['React', 'Angular', 'PrimeNG','Tailwind CSS', 'FlutterFlow', 'PWA', 'WCAG', 'CI/CD', 'REST API'],
   },
   {
     id: 'hackyeah',
@@ -62,7 +62,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     company: 'HackYeah 2024',
     roleKey: 'tl.hy.role',
     descKey: 'tl.hy.desc',
-    tags: ['Finalist', 'React', 'TypeScript', 'TailwindCSS'],
+    tags: ['Finalist', 'Teamwork'],
   },
   {
     id: 'pol',
@@ -70,40 +70,29 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     company: 'Politechnika Lubelska',
     roleKey: 'tl.r2',
     descKey: 'tl.pl.desc',
-    tags: ['React', 'Node.js', 'No-code SaaS', 'make.com-like'],
+    tags: [],
     hollow: true,
   },
 ]
 
 export const PROJECTS: Project[] = [
   {
-    emoji: '🚴',
-    bg: 'rgba(74,222,128,.08)',
+    bg: 'rgba(99,102,241,.1)',
     badgeKey: 'p1.b',
     titleKey: 'p1.t',
     descKey: 'p1.d',
-    chips: ['React', 'TypeScript', 'TailwindCSS'],
-    live: '#',
-    github: '#',
+    chips: ['React', 'Tailwind CSS', 'MySQL', 'Java', 'Spring Boot'],
+    previewSrc: '/praca_inzynierska_projekt.png',
   },
   {
-    emoji: '⚙️',
-    bg: 'rgba(99,102,241,.1)',
+    bg: 'rgba(74,222,128,.08)',
     badgeKey: 'p2.b',
     titleKey: 'p2.t',
     descKey: 'p2.d',
-    chips: ['React', 'Node.js', 'MySQL', 'Docker'],
-    live: '#',
-    github: '#',
-  },
-  {
-    emoji: '🏗️',
-    bg: 'rgba(251,146,60,.08)',
-    badgeKey: 'p3.b',
-    titleKey: 'p3.t',
-    descKey: 'p3.d',
-    chips: ['Angular', 'PrimeNG', 'TypeScript'],
-    live: '#',
+    chips: ['React', 'TypeScript', 'TailwindCSS'],
+    github: 'https://github.com/Vekaltor/ravintola',
+    live: 'https://ravintola.bieda.it/',
+    previewSrc: '/ravintola-preview.png',
   },
 ]
 

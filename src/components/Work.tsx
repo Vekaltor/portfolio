@@ -1,8 +1,8 @@
 import {useState} from 'react'
-import type {TabId} from './work/types'
 import WorkHeader from './work/WorkHeader'
 import WorkTabs from './work/WorkTabs'
 import WorkContent from './work/WorkContent'
+import type {TabId} from "../types/work-tabs-ids.type.ts";
 
 export default function Work() {
     const [tab, setTab] = useState<TabId>('projects')

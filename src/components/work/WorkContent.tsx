@@ -1,7 +1,7 @@
-import type {TabId} from './types'
 import ProjectSlider from './ProjectSlider'
 import TechStack from "./TechStack.tsx";
 import CertSlider from "./CertSlider.tsx";
+import type {TabId} from "../../types/work-tabs-ids.type.ts";
 
 type Props = {
     tab: TabId
