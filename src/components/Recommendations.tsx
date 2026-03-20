@@ -34,9 +34,9 @@ export default function Recommendations() {
     return (
         <section
             id="testimonials"
-            className="relative z-[1] flex min-h-screen flex-col justify-center py-24"
+            className="relative z-[1] flex min-h-screen flex-col justify-center py-16 md:py-24"
         >
-            <div className="mx-auto w-full max-w-[1240px] px-16">
+            <div className="mx-auto w-full max-w-[1240px] px-6 md:px-16">
                 <div ref={headRef}>
                     <RecommendationHeader />
                 </div>
