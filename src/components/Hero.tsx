@@ -21,7 +21,7 @@ function Hero() {
     return (
         <section
             id="hero"
-            className="relative z-[1] flex min-h-screen items-center pb-16 pt-28"
+            className="relative z-[1] flex min-h-screen items-center pb-16 pt-20 md:pt-28"
         >
             <div className="mx-auto w-full max-w-[1240px] px-6 md:px-16">
                 <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-16">

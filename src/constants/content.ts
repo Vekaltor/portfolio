@@ -62,7 +62,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
     company: 'HackYeah 2024',
     roleKey: 'tl.hy.role',
     descKey: 'tl.hy.desc',
-    tags: ['🏆 Finalista', 'React', 'TypeScript', 'TailwindCSS'],
+    tags: ['Finalist', 'React', 'TypeScript', 'TailwindCSS'],
   },
   {
     id: 'pol',

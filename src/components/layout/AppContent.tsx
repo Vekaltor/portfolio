@@ -1,4 +1,4 @@
-import Divider from '../Divider'
+import Divider from '../ui/Divider.tsx'
 import Hero from '../Hero'
 import About from '../About'
 import SoftSkills from '../SoftSkills'
