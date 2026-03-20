@@ -4,17 +4,23 @@ function useCursor() {
     const [customCursor, setCustomCursor] = useState(true)
 
     useEffect(() => {
-        document.body.classList.toggle('default-cursor', !customCursor)
+        document.body.classList.toggle('custom-cursor-enabled', customCursor)
+        document.body.classList.toggle('custom-cursor-disabled', !customCursor)
+
+        return () => {
+            document.body.classList.remove('custom-cursor-enabled')
+            document.body.classList.remove('custom-cursor-disabled')
+        }
     }, [customCursor])
 
     const toggleCursor = () => {
-        setCustomCursor((prev) => !prev)
+        setCustomCursor((prevState) => !prevState)
     }
 
     return {
         customCursor,
-        setCustomCursor,
         toggleCursor,
+        setCustomCursor,
     }
 }
 

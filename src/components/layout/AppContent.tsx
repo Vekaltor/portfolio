@@ -9,16 +9,17 @@ import Contact from '../Contact'
 function AppContent() {
     return (
         <main>
-            <Hero />
-            <Divider />
-            <About />
-            <Divider />
-            <SoftSkills />
-            <Divider />
-            <Work />
-            <Divider />
-            <Testimonials />
-            <Contact />
+            <Hero/>
+            <Divider/>
+            <About/>
+            <Divider/>
+            <Work/>
+            <Divider/>
+            <Testimonials/>
+            <Divider/>
+            <SoftSkills/>
+            <Divider/>
+            <Contact/>
         </main>
     )
 }

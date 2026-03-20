@@ -21,7 +21,7 @@ export type TranslationKey =
     | 'f.subject' | 'f.subject.ph' | 'f.msg' | 'f.msg.ph' | 'f.send'
     | 'footer.title' | 'footer.tagline' | 'footer.status' | 'footer.location'
     | 'footer.nav.cv' | 'footer.made'
-    | 'f3.role' | 'f3.menu' | 'f3.socials'
+    | 'f3.menu' | 'f3.socials'
     | 'ss'
     | 'mobileMenu.navigation' | 'mobileMenu.navigationDesc' | 'mobileMenu.quickActions'
     | 'menu.longCv'
@@ -102,13 +102,12 @@ const pl: Translations = {
     'f.msg': 'Wiadomość',
     'f.msg.ph': 'Cześć Kamil...',
     'f.send': 'Wyślij wiadomość',
-    'footer.title': 'Hej, zatrudnij mnie.',
-    'footer.tagline': '3 lata pisania kodu który leci na produkcję — nie do szuflady. Szukam miejsca gdzie to będzie kontynuowane.',
+    'footer.title': '<span class="text-[var(--accent)]">Szukasz</span> developera? Właśnie go znalazłeś<span class="text-[var(--accent)]">.</span>',
+    'footer.tagline': 'Od 3 lat tworzę rozwiązania, które trafiają na produkcję i realnie działają. Szukam miejsca, w którym będę mógł dalej budować wartościowe produkty i rozwijać się jako developer.',
     'footer.status': 'Dostępny do pracy',
-    'footer.location': 'Lublin, Polska · Remote / Hybrid',
+    'footer.location': 'Lublin, Polska · Zdalnie',
     'footer.nav.cv': 'Pobierz CV',
     'footer.made': 'Stworzone z ❤️ i ☕ przez Kamil Wójcik © 2025',
-    'f3.role': 'Frontend Developer · Lublin',
     'f3.menu': 'Menu',
     'f3.socials': 'Moje sociale',
     'ss': 'Komunikatywny · Teamplayer · Proaktywny · Dbający o szczegóły · Terminowy · Problem Solver · Zorientowany na jakość · Kreatywny · Samodzielny · Open to Feedback',
@@ -192,13 +191,12 @@ const en: Translations = {
     'f.msg': 'Message',
     'f.msg.ph': 'Hi Kamil...',
     'f.send': 'Send message',
-    'footer.title': 'Hey, hire me.',
-    'footer.tagline': '3 years writing code that ships to production — not into a drawer. Looking for a place where that continues.',
+    'footer.title': 'Looking for a developer? You just found one<span class="text-[var(--accent)]">.</span>',
+    'footer.tagline': 'For the past 3 years, I’ve been building solutions that make it to production and actually deliver value. I’m looking for a place where I can continue building meaningful products and grow as a developer.',
     'footer.status': 'Available for work',
-    'footer.location': 'Lublin, Poland · Remote / Hybrid',
+    'footer.location': 'Lublin, Poland · Remote',
     'footer.nav.cv': 'Download CV',
     'footer.made': 'Made with ❤️ and ☕ by Kamil Wójcik © 2025',
-    'f3.role': 'Frontend Developer · Lublin',
     'f3.menu': 'Menu',
     'f3.socials': 'My socials',
     'ss': 'Communicative · Team Player · Proactive · Detail-Oriented · On Time · Problem Solver · Quality Driven · Creative · Self-Sufficient · Open to Feedback',
