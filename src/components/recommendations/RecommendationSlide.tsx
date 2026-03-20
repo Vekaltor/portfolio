@@ -4,10 +4,9 @@ import type {Recommendation} from "../../types/recommendation.interface.ts";
 type Props = {
     slide: number
     cards: Recommendation[]
-    t: (key: string) => string
 }
 
-export default function RecommendationSlide({slide, cards, t}: Props) {
+export default function RecommendationSlide({slide, cards}: Props) {
     const isSingle = cards.length === 1
 
     return (

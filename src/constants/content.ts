@@ -135,30 +135,26 @@ export const CERTS: Certificate[] = [
   // },
 ]
 
-export const TESTIMONIAL_SLIDES: Recommendation[][] = [
-  [
-    {
-      quoteKey: 't1q',
-      roleKey: 't1r',
-      name: 'Kacper Woliński',
-      avatarSrc: '/people/kacper.jpg',
-      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
-    },
-    {
-      quoteKey: 't2q',
-      roleKey: 't2r',
-      name: 'Sebastian Pola',
-      avatarSrc: '/people/sebastian.jpg',
-      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
-    },
-  ],
-  [
-    {
-      quoteKey: 't3q',
-      roleKey: 't3r',
-      name: 'Bartłomiej Laskowski',
-      avatarSrc: '/people/bartek.jpg',
-      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
-    },
-  ],
+export const TESTIMONIALS: Recommendation[] = [
+  {
+    quoteKey: 't1q',
+    roleKey: 't1r',
+    name: 'Kacper Woliński',
+    avatarSrc: '/people/kacper.jpg',
+    linkedin: 'https://linkedin.com/',
+  },
+  {
+    quoteKey: 't2q',
+    roleKey: 't2r',
+    name: 'Sebastian Pola',
+    avatarSrc: '/people/sebastian.jpg',
+    linkedin: 'https://linkedin.com/',
+  },
+  {
+    quoteKey: 't3q',
+    roleKey: 't3r',
+    name: 'Bartłomiej Laskowski',
+    avatarSrc: '/people/bartek.jpg',
+    linkedin: 'https://linkedin.com/',
+  },
 ]
