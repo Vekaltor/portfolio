@@ -3,7 +3,7 @@ import Hero from '../Hero'
 import About from '../About'
 import SoftSkills from '../SoftSkills'
 import Work from '../Work'
-import Testimonials from '../Testimonials'
+import Recommendations from '../Recommendations.tsx'
 import Contact from '../Contact'
 
 function AppContent() {
@@ -15,7 +15,7 @@ function AppContent() {
             <Divider/>
             <Work/>
             <Divider/>
-            <Testimonials/>
+            <Recommendations/>
             <Divider/>
             <SoftSkills/>
             <Divider/>

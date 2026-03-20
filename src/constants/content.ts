@@ -2,7 +2,7 @@ import type {TechIcon} from "../types/techIcon.interface.ts";
 import type {TimelineItem} from "../types/timeLineItem.interface.ts";
 import type {Project} from "../types/project.interface.ts";
 import type {Certificate} from "../types/certificate.interface.ts";
-import type {TestimonialCard} from "../types/testimonialCard.interface.ts";
+import type {Recommendation} from "../types/recommendation.interface.ts";
 
 const BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/'
 const icon = (src: string, name: string, invert = false): TechIcon => ({ src: `${BASE}${src}`, name, invert })
@@ -135,12 +135,30 @@ export const CERTS: Certificate[] = [
   // },
 ]
 
-export const TESTIMONIAL_SLIDES: TestimonialCard[][] = [
+export const TESTIMONIAL_SLIDES: Recommendation[][] = [
   [
-    { quoteKey: 't1q', roleKey: 't1r', avatar: '👨‍💼' },
-    { quoteKey: 't2q', roleKey: 't2r', avatar: '👩‍🎨' },
+    {
+      quoteKey: 't1q',
+      roleKey: 't1r',
+      name: 'Kacper Woliński',
+      avatarSrc: '/people/kacper.jpg',
+      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
+    },
+    {
+      quoteKey: 't2q',
+      roleKey: 't2r',
+      name: 'Sebastian Pola',
+      avatarSrc: '/people/sebastian.jpg',
+      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
+    },
   ],
   [
-    { quoteKey: 't3q', roleKey: 't3r', avatar: '👨‍💻' },
+    {
+      quoteKey: 't3q',
+      roleKey: 't3r',
+      name: 'Bartłomiej Laskowski',
+      avatarSrc: '/people/bartek.jpg',
+      linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
+    },
   ],
 ]
