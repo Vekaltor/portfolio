@@ -4,7 +4,6 @@ import DownloadCvButton from '../ui/DownloadCvButton.tsx'
 import CursorSwitcher from "../ui/CursorSwitch.tsx";
 import useAppPreferences from "../../hooks/useAppPreferences.hook.ts";
 import {useLang} from "../../context/LangContext.tsx";
-import {classNames} from "../../helpers/classNames.helper.ts";
 import {useMediaQuery} from "react-responsive";
 import {MOBILE_MAX_WIDTH} from "../../constants/breakpoints.ts";
 
@@ -14,17 +13,25 @@ function HeaderControls() {
     const {lang, toggle} = useLang()
     const isMobile = useMediaQuery({maxWidth: MOBILE_MAX_WIDTH})
 
+    if (isMobile) {
+        return (
+            <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap gap-3 justify-end">
+                    <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} isMobile={true}/>
+                    <CursorSwitcher customCursor={customCursor} toggleCursor={toggleCursor} isMobile={true}/>
+                    <LanguageSwitcher lang={lang} toggle={toggle} isMobile={true}/>
+                </div>
+                <DownloadCvButton isMobile={true}/>
+            </div>
+        )
+    }
+
     return (
-        <div
-            className={classNames(
-                'flex items-center',
-                isMobile ? 'flex-wrap gap-3' : 'gap-[.55rem]'
-            )}
-        >
-            <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
-            <CursorSwitcher customCursor={customCursor} toggleCursor={toggleCursor} />
-            <LanguageSwitcher lang={lang} toggle={toggle} />
-            <DownloadCvButton isMobile={isMobile} />
+        <div className="flex items-center gap-[.55rem]">
+            <ThemeSwitcher theme={theme} toggleTheme={toggleTheme}/>
+            <CursorSwitcher customCursor={customCursor} toggleCursor={toggleCursor}/>
+            <LanguageSwitcher lang={lang} toggle={toggle}/>
+            <DownloadCvButton/>
         </div>
     )
 }

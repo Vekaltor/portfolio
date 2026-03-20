@@ -1,5 +1,6 @@
-import {CloseIcon, MenuIcon} from "./NavbarIcons.tsx";
 import {classNames} from "../../helpers/classNames.helper.ts";
+import CloseIcon from '@assets/icons/close.svg?react'
+import MenuIcon from '@assets/icons/menu.svg?react'
 
 interface MobileMenuButtonProps {
     isOpen: boolean

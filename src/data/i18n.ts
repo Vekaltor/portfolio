@@ -24,6 +24,7 @@ export type TranslationKey =
     | 'f3.role' | 'f3.menu' | 'f3.socials'
     | 'ss'
     | 'mobileMenu.navigation' | 'mobileMenu.navigationDesc' | 'mobileMenu.quickActions'
+    | 'menu.longCv'
 
 type Translations = Record<TranslationKey, string>
 
@@ -114,6 +115,7 @@ const pl: Translations = {
     'mobileMenu.navigation': 'Nawigacja',
     'mobileMenu.navigationDesc': 'Zobacz, co tworzę, jakie mam doświadczenie i jak możemy współpracować.',
     'mobileMenu.quickActions': 'Szybkie akcje',
+    'menu.longCv': 'Pobierz CV',
 }
 
 const en: Translations = {
@@ -203,6 +205,7 @@ const en: Translations = {
     'mobileMenu.navigation': 'Navigation',
     'mobileMenu.navigationDesc': 'See what I build, my experience and how we can work together.',
     'mobileMenu.quickActions': 'Quick actions',
+    'menu.longCv': 'Download CV',
 }
 
 export const translations: Record<'pl' | 'en', Translations> = {pl, en}

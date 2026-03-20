@@ -1,12 +1,14 @@
-import { DownloadIcon } from './NavbarIcons.tsx'
-import { classNames } from '../../helpers/classNames.helper.ts'
+import {classNames} from '../../helpers/classNames.helper.ts'
+import DownloadIcon from "@assets/icons/download.svg?react"
+import {useLang} from "../../context/LangContext.tsx";
 
 interface DownloadCvButtonProps {
     isMobile?: boolean
 }
 
 function DownloadCvButton(props: DownloadCvButtonProps) {
-    const { isMobile = false } = props
+    const {isMobile = false} = props
+    const {t} = useLang();
 
     return (
         <a
@@ -15,12 +17,14 @@ function DownloadCvButton(props: DownloadCvButtonProps) {
             className={classNames(
                 'inline-flex items-center gap-[.4rem] font-semibold rounded-xl transition-all',
                 isMobile
-                    ? 'h-[46px] px-5 text-[0.9rem] bg-[var(--accent)] text-[#050a05] hover:bg-[var(--accentd)]'
+                    ? 'h-[46px] px-5 text-[0.9rem] bg-[var(--accent)] text-[#050a05] hover:bg-[var(--accentd)] flex justify-center'
                     : 'px-4 py-[.42rem] text-[.78rem] bg-[var(--accent)] text-[#050a05] hover:bg-[var(--accentd)] hover:-translate-y-px'
             )}
         >
-            <DownloadIcon />
-            CV
+            <DownloadIcon className={classNames(
+                isMobile && "w-5 h-5"
+            )}/>
+            {isMobile ? t("menu.longCv") : "CV"}
         </a>
     )
 }
