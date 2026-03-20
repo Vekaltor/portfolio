@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     badgeKey: 'p2.b',
     titleKey: 'p2.t',
     descKey: 'p2.d',
-    chips: ['React', 'TypeScript', 'TailwindCSS'],
+    chips: ['React', 'JavaScript', 'Recharts' , 'Redux Toolkit', 'REST API', 'Admin Panel'],
     github: 'https://github.com/Vekaltor/ravintola',
     live: 'https://ravintola.bieda.it/',
     previewSrc: '/ravintola-preview.png',

@@ -20,7 +20,7 @@ function ProjectLinks(props: ProjectLinksProps): JSX.Element | null {
                     href={live}
                     target="_blank"
                     rel="noreferrer"
-                    className="cursor-none text-[.74rem] font-medium text-[var(--text3)] transition-colors hover:text-[var(--accent)]"
+                    className="cursor-none underline text-[.74rem] font-medium text-[var(--text3)] transition-colors hover:text-[var(--accent)]"
                 >
                     Live
                 </a>
@@ -31,7 +31,7 @@ function ProjectLinks(props: ProjectLinksProps): JSX.Element | null {
                     href={github}
                     target="_blank"
                     rel="noreferrer"
-                    className="cursor-none text-[.74rem] font-medium text-[var(--text3)] transition-colors hover:text-[var(--accent)]"
+                    className="cursor-none underline text-[.74rem] font-medium text-[var(--text3)] transition-colors hover:text-[var(--accent)]"
                 >
                     GitHub
                 </a>

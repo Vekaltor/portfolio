@@ -7,9 +7,9 @@ export default function ProjectSlider() {
     return (
         <BaseSlider<Project>
             items={PROJECTS}
-            initialIndex={1}
+            initialIndex={0}
             heightClassName="h-[480px]"
-            slideWidthClassName="w-[420px]"
+            slideWidthClassName="w-full max-w-[420px]"
             getItemKey={(project, index) => `${project.titleKey}-${index}`}
             ItemComponent={ProjectSlideItem}
         />

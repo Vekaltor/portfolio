@@ -68,7 +68,7 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                         {title}
                     </h3>
 
-                    <p className="mb-[1.15rem] text-[.83rem] leading-[1.72] text-[var(--text2)]">
+                    <p className="mb-[1.15rem] text-[.83rem] leading-[1.72] text-[var(--text2)] line-clamp-[4]">
                         {t(project.descKey as TranslationKey)}
                     </p>
 
