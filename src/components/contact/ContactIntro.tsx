@@ -7,7 +7,7 @@ import LinkedinIcon from '@assets/icons/linkedin.svg?react'
 import GithubIcon from '@assets/icons/github.svg?react'
 import DownloadIcon from '@assets/icons/download.svg?react'
 import ContactForm from "./ContactForm.tsx";
-import {FormEvent} from "react";
+import type {FormEvent} from "react";
 
 interface ContactIntroProps {
     sent: boolean
