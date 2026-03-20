@@ -1,6 +1,5 @@
-import NavbarMenu from '../ui/NavbarMenu.tsx'
-import HeaderControls from './HeaderControls.tsx'
-import { classNames } from '../../helpers/classNames.helper.ts'
+import {classNames} from '../../helpers/classNames.helper.ts'
+import MobileMenuContent from "../ui/MobileMenuContent.tsx";
 
 interface MobileMenuPanelProps {
     isOpen: boolean
@@ -8,7 +7,7 @@ interface MobileMenuPanelProps {
 }
 
 function MobileMenuPanel(props: MobileMenuPanelProps) {
-    const { isOpen, onNavigate } = props
+    const {isOpen, onNavigate} = props
 
     return (
         <div
@@ -18,7 +17,7 @@ function MobileMenuPanel(props: MobileMenuPanelProps) {
             )}
             aria-hidden={!isOpen}
         >
-            <div className="absolute inset-0 bg-[rgba(2,4,3,0.10)]" />
+            <div className="absolute inset-0 bg-[rgba(2,4,3,0.10)]"/>
 
             <div
                 className={classNames(
@@ -26,7 +25,7 @@ function MobileMenuPanel(props: MobileMenuPanelProps) {
                     isOpen ? 'opacity-100 backdrop-blur-[12px]' : 'opacity-0 backdrop-blur-0'
                 )}
             >
-                <div className="absolute inset-0 bg-[rgba(2,4,3,0.14)]" />
+                <div className="absolute inset-0 bg-[rgba(2,4,3,0.14)]"/>
             </div>
 
             <div
@@ -45,20 +44,11 @@ function MobileMenuPanel(props: MobileMenuPanelProps) {
 
             <div
                 className={classNames(
-                    'relative z-10 flex min-h-dvh flex-col px-6 pb-8 pt-28',
                     'transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]',
                     isOpen ? 'translate-x-0 opacity-100 delay-150' : 'translate-x-10 opacity-0'
                 )}
             >
-                <div className="flex flex-1 flex-col justify-between">
-                    <div className="flex-1">
-                        <NavbarMenu onNavigate={onNavigate} isMobile />
-                    </div>
-
-                    <div className="pt-10">
-                        <HeaderControls isMobile />
-                    </div>
-                </div>
+                <MobileMenuContent onNavigate={onNavigate}/>
             </div>
         </div>
     )
