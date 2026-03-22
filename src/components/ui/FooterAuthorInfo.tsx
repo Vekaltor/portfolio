@@ -1,4 +1,4 @@
-import {useLang} from "../../context/LangContext.tsx";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 function FooterAuthorInfo(){
     const {t} = useLang()

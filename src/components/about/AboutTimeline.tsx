@@ -1,7 +1,8 @@
 import {useEffect, useRef} from 'react'
 import {TIMELINE_ITEMS} from '../../constants/content.ts'
 import type {TranslationKey} from '../../data/i18n'
-import {useLang} from '../../context/LangContext.tsx'
+
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 export default function AboutTimeline() {
     const {t} = useLang()

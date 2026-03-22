@@ -1,7 +1,7 @@
-import {useLang} from '../../context/LangContext'
 import type {TranslationKey} from '../../data/i18n'
 import type {Dispatch, SetStateAction} from "react";
 import type {TabId} from "../../types/work-tabs-ids.type.ts";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 type Props = {
     tab: TabId

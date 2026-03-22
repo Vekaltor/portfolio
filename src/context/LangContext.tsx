@@ -1,30 +1,34 @@
-import {createContext, type ReactNode, useContext, useState} from 'react'
+import {createContext, type ReactNode, useState} from 'react'
 import {type TranslationKey, translations} from '../data/i18n'
 import type {Lang} from "../types/lang.type.ts";
+import localStorageService from "../helpers/local-storage.service.ts";
+import {LocalStorageKeys} from "../types/local-storage-keys.enum.ts";
 
-interface LangContextValue {
+export interface LangContextValue {
     lang: Lang
     t: (key: TranslationKey) => string
     toggle: () => void
 }
 
-const LangContext = createContext<LangContextValue | null>(null)
+export const LangContext = createContext<LangContextValue | null>(null)
 
 export function LangProvider({children}: { children: ReactNode }) {
-    const [lang, setLang] = useState<Lang>('pl')
+    const [lang, setLang] = useState<Lang>(() => {
+        const saved = localStorageService.get<Lang>(LocalStorageKeys.LANG)
+        return saved === 'en' || saved === 'pl' ? saved : 'pl'
+    })
 
     const t = (key: TranslationKey): string => translations[lang][key] ?? key
-    const toggle = () => setLang(l => (l === 'pl' ? 'en' : 'pl'))
+
+    const toggle = () => setLang(l => {
+        const next: Lang = l === 'pl' ? 'en' : 'pl'
+        localStorageService.save(LocalStorageKeys.LANG, next)
+        return next
+    })
 
     return (
         <LangContext.Provider value={{lang, t, toggle}}>
             {children}
         </LangContext.Provider>
     )
-}
-
-export function useLang(): LangContextValue {
-    const ctx = useContext(LangContext)
-    if (!ctx) throw new Error('useLang must be used inside LangProvider')
-    return ctx
 }

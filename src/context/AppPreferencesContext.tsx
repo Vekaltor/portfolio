@@ -20,10 +20,10 @@ interface AppUIProviderProps {
 export const AppPreferencesContext = createContext<AppUIContextValue | null>(null)
 
 export const AppPreferencesProvider = (props: AppUIProviderProps) => {
-    const {children} = props
+    const {children} = props;
 
-    const {theme, setTheme, toggleTheme} = useTheme()
-    const {customCursor, setCustomCursor, toggleCursor} = useCursor()
+    const {theme, setTheme, toggleTheme} = useTheme();
+    const {customCursor, setCustomCursor, toggleCursor} = useCursor();
 
     return (
         <AppPreferencesContext.Provider

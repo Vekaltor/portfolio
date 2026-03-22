@@ -1,4 +1,4 @@
-import { useLang } from '../context/LangContext'
+import {useLang} from "../hooks/useLang.hook.ts";
 
 export default function SoftSkills() {
   const { t } = useLang()

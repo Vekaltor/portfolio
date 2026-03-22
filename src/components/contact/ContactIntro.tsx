@@ -1,4 +1,3 @@
-import {useLang} from "../../context/LangContext.tsx";
 import {useReveal} from "../../hooks/useReveal.hook.ts";
 import ContactLink from "./ContactLink.tsx";
 import MailIcon from '@assets/icons/mail.svg?react'
@@ -8,6 +7,7 @@ import GithubIcon from '@assets/icons/github.svg?react'
 import DownloadIcon from '@assets/icons/download.svg?react'
 import ContactForm from "./ContactForm.tsx";
 import type {FormEvent} from "react";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface ContactIntroProps {
     sent: boolean

@@ -1,5 +1,5 @@
-import { useLang } from '../../context/LangContext'
 import StatCard from './StatCard'
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface HeroStatsProps {
     experienceCount: number
