@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import {LocalStorageKeys} from "../types/local-storage-keys.enum.ts";
-import localStorageService from "../helpers/local-storage.service.ts";
+import {LocalStorageKeys} from "../types/localStorageKeys.enum.ts";
+import localStorageService from "../helpers/localStorage.service.ts";
 
 function useCursor() {
     const [customCursor, setCustomCursor] = useState<boolean>(() => {

@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import type {Theme} from "../types/theme.type.ts";
-import localStorageService from "../helpers/local-storage.service.ts";
-import {LocalStorageKeys} from "../types/local-storage-keys.enum.ts";
+import localStorageService from "../helpers/localStorage.service.ts";
+import {LocalStorageKeys} from "../types/localStorageKeys.enum.ts";
 
 function useTheme() {
     const [theme, setTheme] = useState<Theme>(() => {

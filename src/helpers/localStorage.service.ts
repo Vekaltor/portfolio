@@ -1,4 +1,4 @@
-import type {LocalStorageKeys} from "../types/local-storage-keys.enum.ts";
+import type {LocalStorageKeys} from "../types/localStorageKeys.enum.ts";
 
 class LocalStorageService {
     save(key: LocalStorageKeys, value: any): void {

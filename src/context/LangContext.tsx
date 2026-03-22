@@ -1,8 +1,8 @@
 import {createContext, type ReactNode, useState} from 'react'
 import {type TranslationKey, translations} from '../data/i18n'
 import type {Lang} from "../types/lang.type.ts";
-import localStorageService from "../helpers/local-storage.service.ts";
-import {LocalStorageKeys} from "../types/local-storage-keys.enum.ts";
+import localStorageService from "../helpers/localStorage.service.ts";
+import {LocalStorageKeys} from "../types/localStorageKeys.enum.ts";
 
 export interface LangContextValue {
     lang: Lang
