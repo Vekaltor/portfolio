@@ -1,4 +1,3 @@
-import {useLang} from '../../context/LangContext'
 import DownloadIcon from '@assets/icons/download.svg?react'
 import GithubIcon from '@assets/icons/github.svg?react'
 import LinkedinIcon from '@assets/icons/linkedin.svg?react'
@@ -6,6 +5,7 @@ import FooterSocialLink from './FooterSocialLink'
 import type {FooterSocialItem} from "../../types/footerSocialItem.interface.ts";
 import {FOOTER_SOCIAL_ITEMS} from "../../constants/socialItems.ts";
 import type {JSX} from "react";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 
 function FooterSocials() {

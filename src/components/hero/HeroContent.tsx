@@ -1,8 +1,8 @@
-import {useLang} from '../../context/LangContext'
 import HeroStatusJobBadge from './HeroStatusJobBadge.tsx'
 import HeroMainTechnologies from './HeroMainTechnologies.tsx'
 import HeroActions from './HeroActions'
 import HeroSocials from './HeroSocials'
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface HeroContentProps {
     typedText: string

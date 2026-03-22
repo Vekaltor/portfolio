@@ -1,6 +1,7 @@
 import {useReveal} from "../../hooks/useReveal.hook.ts";
 import type {TranslationKey} from "../../data/i18n.ts";
-import {useLang} from "../../context/LangContext.tsx";
+
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 function AboutMe() {
     const {t} = useLang();

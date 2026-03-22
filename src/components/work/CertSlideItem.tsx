@@ -2,9 +2,9 @@ import type {JSX} from 'react'
 import {useState} from 'react'
 import type {TranslationKey} from '../../data/i18n.ts'
 import type {Certificate} from '../../types/certificate.interface.ts'
-import {useLang} from '../../context/LangContext.tsx'
 import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import CertPreviewModal from './CertPreviewModal.tsx'
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 type Props = SliderItemComponentProps<Certificate>
 

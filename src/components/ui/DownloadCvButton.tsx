@@ -1,6 +1,7 @@
 import {classNames} from '../../helpers/classNames.helper.ts'
 import DownloadIcon from "@assets/icons/download.svg?react"
-import {useLang} from "../../context/LangContext.tsx";
+
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface DownloadCvButtonProps {
     isMobile?: boolean

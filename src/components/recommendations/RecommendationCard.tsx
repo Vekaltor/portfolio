@@ -1,7 +1,7 @@
 import type { TranslationKey } from '../../data/i18n'
 import type { Recommendation } from '../../types/recommendation.interface.ts'
-import { useLang } from '../../context/LangContext.tsx'
 import PersonAvatar from "../ui/PlaceholderAvatar.tsx";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface RecommendationCardProps {
     card: Recommendation

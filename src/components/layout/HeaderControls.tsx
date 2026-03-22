@@ -3,9 +3,9 @@ import LanguageSwitcher from '../ui/LanguageSwitcher.tsx'
 import DownloadCvButton from '../ui/DownloadCvButton.tsx'
 import CursorSwitcher from "../ui/CursorSwitch.tsx";
 import useAppPreferences from "../../hooks/useAppPreferences.hook.ts";
-import {useLang} from "../../context/LangContext.tsx";
 import {useMediaQuery} from "react-responsive";
 import {MOBILE_MAX_WIDTH} from "../../constants/breakpoints.ts";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 
 function HeaderControls() {

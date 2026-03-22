@@ -1,5 +1,5 @@
-import { useLang } from '../../context/LangContext'
 import { useReveal } from '../../hooks/useReveal.hook.ts'
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 export default function WorkHeader() {
     const { t } = useLang()

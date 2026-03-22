@@ -1,9 +1,9 @@
 import SectionLabel from "./SectionLabel.tsx";
 import IconGrid from "./IconGrid.tsx";
 import {FW_ICONS, LANG_ICONS, LEARN_ICONS, TOOL_ICONS} from "../../constants/content.ts";
-import {useLang} from "../../context/LangContext.tsx";
 import type {TechIcon} from "../../types/techIcon.interface.ts";
 import type {TranslationKey} from "../../data/i18n.ts";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 const STACK_SECTIONS: { key: TranslationKey; icons: TechIcon[] }[] = [
     {key: 'stack.cat.lang', icons: LANG_ICONS},

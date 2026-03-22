@@ -1,9 +1,9 @@
-import {useLang} from '../../context/LangContext.tsx'
 import {NAV_ITEMS} from '../../constants/navItems.ts'
 import type {NavItemKey} from '../../types/navbar.type.ts'
 import {classNames} from "../../helpers/classNames.helper.ts";
 import {useMediaQuery} from "react-responsive";
 import {MOBILE_MAX_WIDTH} from "../../constants/breakpoints.ts";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface NavbarMenuProps {
     onNavigate: () => void

@@ -1,10 +1,10 @@
-import {useLang} from '../context/LangContext'
 import {useTyperHook} from '../hooks/useTyper.hook.ts'
 import {useCounter} from '../hooks/useCounter.hook.ts'
 import HeroContent from './hero/HeroContent'
 import HeroPhoto from './hero/HeroPhoto'
 import HeroStats from './hero/HeroStats'
 import HeroStatusJobBadge from "./hero/HeroStatusJobBadge.tsx";
+import {useLang} from "../hooks/useLang.hook.ts";
 
 function Hero() {
     const {lang} = useLang()

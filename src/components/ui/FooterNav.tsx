@@ -1,5 +1,5 @@
-import {useLang} from '../../context/LangContext'
 import {FOOTER_NAV_ITEMS} from "../../constants/navItems.ts";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 
 function FooterNav() {

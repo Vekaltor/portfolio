@@ -1,6 +1,6 @@
-import { useLang } from '../../context/LangContext.tsx'
 import NavbarMenu from '../ui/NavbarMenu.tsx'
 import HeaderControls from "../layout/HeaderControls.tsx";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 interface MobileMenuContentProps {
     onNavigate: () => void

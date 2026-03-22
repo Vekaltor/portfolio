@@ -1,4 +1,3 @@
-import {useLang} from '../../context/LangContext.tsx'
 import type {TranslationKey} from '../../data/i18n.ts'
 import type {Project} from '../../types/project.interface.ts'
 import type {JSX} from 'react'
@@ -7,6 +6,7 @@ import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
 import ImagePreviewModal from "../ui/ImagePreviewModal.tsx";
+import {useLang} from "../../hooks/useLang.hook.ts";
 
 type Props = SliderItemComponentProps<Project>
 
