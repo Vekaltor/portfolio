@@ -27,7 +27,7 @@ export default function Contact() {
             <div
                 className="mx-auto grid w-full items-center max-w-[1240px] flex-1 grid-cols-1 gap-16 px-6 md:px-16 min-[980px]:grid-cols-2 min-[980px]:gap-[7rem]">
                 <ContactIntro sent={sent} onSubmit={handleSubmit}/>
-                <div className="hidden min-[980px]:block">
+                <div className="hidden min-[980px]:block self-end">
                     <ContactForm sent={sent} onSubmit={handleSubmit}/>
                 </div>
             </div>
