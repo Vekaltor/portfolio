@@ -38,9 +38,9 @@ function MobileMenuContent(props: MobileMenuContentProps) {
                         }}
                     >
                         <div className="mb-4">
-                        <span className="text-[0.8rem] font-semibold uppercase tracking-[0.22em] text-[var(--text3)]">
-                            {t('mobileMenu.quickActions')}
-                        </span>
+                            <span className="text-[0.8rem] font-semibold uppercase tracking-[0.22em] text-[var(--text3)]">
+                                {t('mobileMenu.quickActions')}
+                            </span>
                         </div>
 
                         <HeaderControls/>

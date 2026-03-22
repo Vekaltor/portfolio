@@ -15,7 +15,7 @@ function HeaderControls() {
 
     if (isMobile) {
         return (
-            <div className="flex gap-3 items-center">
+            <div className="flex gap-3 items-center flex-wrap">
                 <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} isMobile={true}/>
                 <LanguageSwitcher lang={lang} toggle={toggle} isMobile={true}/>
                 <DownloadCvButton isMobile={true}/>
