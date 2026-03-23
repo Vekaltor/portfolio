@@ -11,6 +11,8 @@ export type TranslationKey =
     | 'stack.motivational'
     | 'p1.b' | 'p1.t' | 'p1.d'
     | 'p2.b' | 'p2.t' | 'p2.d'
+    | 'p3.b' | 'p3.t' | 'p3.d'
+    | 'p4.b' | 'p4.t' | 'p4.d'
     | 'chy.t' | 'chy.s' | 'chy.l'
     | 'cc1.t' | 'cc1.s' | 'cc2.t' | 'cc2.s' | 'cc3.t' | 'cc3.s' | 'ccl'
     | 'test.eyebrow' | 'test.title'
@@ -69,6 +71,12 @@ const pl: Translations = {
     'p2.b': 'Projekt własny',
     'p2.t': 'Ravintola',
     'p2.d': 'Aplikacja webowa wspierająca zarządzanie restauracją - od obsługi zamówień po organizację pracy. Projekt skupiony na czytelnym UI, szybkim przepływie danych i praktycznej architekturze aplikacji.',
+    'p3.b': 'Projekt własny',
+    'p3.t': 'News App',
+    'p3.d': 'Aplikacja webowa do przeglądania aktualnych wiadomości z różnych źródeł. Integracja z zewnętrznym API, zarządzanie stanem przez Redux Toolkit oraz nacisk na szybki dostęp do treści i przejrzysty interfejs użytkownika.',
+    'p4.b': 'Projekt rekrutacyjny',
+    'p4.t': 'Blogger',
+    'p4.d': 'Aplikacja blogowa stworzona w Angularze jako pierwsze podejście do frameworka. W ciągu 2 dni zbudowałem działającą, responsywną aplikację z integracją API i czytelnym UI, co pozwoliło mi szybko wejść w ekosystem Angulara i rozpocząć pracę komercyjną.',
     'chy.t': 'Finalista HackYeah 2024',
     'chy.s': 'Największy hackathon w Europie · projekt CountryBike. Praca zespołowa, kreatywność i kod w 24h.',
     'chy.l': 'Zobacz projekt',
@@ -156,6 +164,12 @@ const en: Translations = {
     'p2.b': 'Personal project',
     'p2.t': 'Ravintola',
     'p2.d': 'A web application designed to support restaurant management - from handling orders to organizing daily operations. Focused on clean UI, fast data flow and practical application architecture.',
+    'p3.b': 'Personal project',
+    'p3.t': 'News App',
+    'p3.d': 'A web application for browsing real-time news from multiple sources. Integrates external API, uses Redux Toolkit for state management and focuses on fast content access and clean, user-friendly UI.',
+    'p4.b': 'Recruitment project',
+    'p4.t': 'Blogger',
+    'p4.d': 'A blog application built in Angular as my first exposure to the framework. Within 2 days I delivered a fully working, responsive app with API integration and clean UI, which helped me quickly onboard into Angular in a commercial environment.',
     'chy.t': 'HackYeah 2024 Finalist',
     'chy.s': "Europe's largest hackathon · CountryBike project. Teamwork, creativity and code in 24h.",
     'chy.l': 'View project',
