@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
     descKey: 'p2.d',
     chips: ['React', 'JavaScript', 'Recharts' , 'Redux Toolkit', 'REST API', 'Admin Panel'],
     github: 'https://github.com/Vekaltor/ravintola',
-    live: 'https://ravintola.bieda.it/',
+    live: 'https://ravintola.toadres.pl',
     previewSrc: '/ravintola-preview.png',
   },
 ]
@@ -141,20 +141,20 @@ export const TESTIMONIALS: Recommendation[] = [
     roleKey: 't1r',
     name: 'Kacper Woliński',
     avatarSrc: '/people/kacper.jpg',
-    linkedin: 'https://linkedin.com/',
+    linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
   },
   {
     quoteKey: 't2q',
     roleKey: 't2r',
     name: 'Sebastian Pola',
     avatarSrc: '/people/sebastian.jpg',
-    linkedin: 'https://linkedin.com/',
+    linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
   },
   {
     quoteKey: 't3q',
     roleKey: 't3r',
     name: 'Bartłomiej Laskowski',
     avatarSrc: '/people/bartek.jpg',
-    linkedin: 'https://linkedin.com/',
+    linkedin: 'https://www.linkedin.com/in/kamil-w%C3%B3jcik-0bbba4276',
   },
 ]
