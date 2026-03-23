@@ -95,14 +95,21 @@ export const PROJECTS: Project[] = [
         previewSrc: '/ravintola-preview.png',
     },
     {
-        bg: 'rgba(37,99,235,.16)',
-        badgeKey: 'p3.b',
-        titleKey: 'p3.t',
-        descKey: 'p3.d',
-        chips: ['React', 'Redux Toolkit', 'REST API', 'News API', 'Responsive UI'],
-        github: 'https://github.com/Vekaltor/news-app',
-        previewSrc: '/news-app-preview.png',
-        live: 'https://vekaltor.github.io/news-app/en',
+        bg: 'rgba(124,58,237,.16)',
+        badgeKey: 'p5.b',
+        titleKey: 'p5.t',
+        descKey: 'p5.d',
+        chips: ['React', 'TypeScript', 'Socket.io', 'Redux Toolkit', 'MongoDB', 'Redis', 'styled-components'],
+        github: 'https://github.com/Vekaltor/react-chat',
+        previewSrc: '/react-chat-preview.png',
+    },
+    {
+        bg: 'rgba(124,58,237,.10)',
+        badgeKey: 'p6.b',
+        titleKey: 'p6.t',
+        descKey: 'p6.d',
+        chips: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'Redis', 'JWT', 'nodemailer'],
+        github: 'https://github.com/Vekaltor/react-chat-api',
     },
     {
         bg: 'rgba(225,29,72,.16)',
@@ -113,7 +120,17 @@ export const PROJECTS: Project[] = [
         github: 'https://github.com/Vekaltor/blogger',
         previewSrc: '/blogger-preview.png',
         live: 'https://vekaltor.github.io/blogger/',
-    }
+    },
+    {
+        bg: 'rgba(37,99,235,.16)',
+        badgeKey: 'p3.b',
+        titleKey: 'p3.t',
+        descKey: 'p3.d',
+        chips: ['React', 'Redux Toolkit', 'REST API', 'News API', 'Responsive UI'],
+        github: 'https://github.com/Vekaltor/news-app',
+        previewSrc: '/news-app-preview.png',
+        live: 'https://vekaltor.github.io/news-app/en',
+    },
 ]
 
 export const CERTS: Certificate[] = [
