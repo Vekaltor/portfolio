@@ -6,15 +6,9 @@ import LinkedinIcon from '@assets/icons/linkedin.svg?react'
 import GithubIcon from '@assets/icons/github.svg?react'
 import DownloadIcon from '@assets/icons/download.svg?react'
 import ContactForm from "./ContactForm.tsx";
-import type {FormEvent} from "react";
 import {useLang} from "../../hooks/useLang.hook.ts";
 
-interface ContactIntroProps {
-    sent: boolean
-    onSubmit: (event: FormEvent<HTMLFormElement>) => void
-}
-
-function ContactIntro(props: ContactIntroProps) {
+function ContactIntro() {
     const {t} = useLang()
     const leftRef = useReveal<HTMLDivElement>()
 
@@ -34,7 +28,7 @@ function ContactIntro(props: ContactIntroProps) {
             </p>
 
             <div className="block min-[980px]:hidden mb-16 min-[980px]:mb-0">
-                <ContactForm {...props}/>
+                <ContactForm/>
             </div>
 
             <div className="flex flex-col gap-[.7rem]">

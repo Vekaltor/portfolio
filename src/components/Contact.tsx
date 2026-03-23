@@ -1,21 +1,8 @@
-import type {FormEvent} from 'react'
-import {useState} from 'react'
 import ContactIntro from "./contact/ContactIntro.tsx";
 import ContactForm from "./contact/ContactForm.tsx";
 
 
 export default function Contact() {
-    const [sent, setSent] = useState(false)
-
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        setSent(true)
-
-        window.setTimeout(() => {
-            setSent(false)
-        }, 3000)
-    }
-
     return (
         <section
             id="contact"
@@ -26,9 +13,9 @@ export default function Contact() {
 
             <div
                 className="mx-auto grid w-full items-center max-w-[1240px] flex-1 grid-cols-1 gap-16 px-6 md:px-16 min-[980px]:grid-cols-2 min-[980px]:gap-[7rem]">
-                <ContactIntro sent={sent} onSubmit={handleSubmit}/>
+                <ContactIntro/>
                 <div className="hidden min-[980px]:block self-end">
-                    <ContactForm sent={sent} onSubmit={handleSubmit}/>
+                    <ContactForm/>
                 </div>
             </div>
         </section>
