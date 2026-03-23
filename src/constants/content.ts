@@ -77,7 +77,7 @@ export const TIMELINE_ITEMS: TimelineItem[] = [
 
 export const PROJECTS: Project[] = [
     {
-        bg: 'rgba(99,102,241,.1)',
+        bg: 'rgba(79,70,229,.18)',
         badgeKey: 'p1.b',
         titleKey: 'p1.t',
         descKey: 'p1.d',
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
         previewSrc: '/praca_inzynierska_projekt.png',
     },
     {
-        bg: 'rgba(74,222,128,.08)',
+        bg: 'rgba(34,197,94,.16)',
         badgeKey: 'p2.b',
         titleKey: 'p2.t',
         descKey: 'p2.d',
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
         previewSrc: '/ravintola-preview.png',
     },
     {
-        bg: 'rgba(59,130,246,.08)',
+        bg: 'rgba(37,99,235,.16)',
         badgeKey: 'p3.b',
         titleKey: 'p3.t',
         descKey: 'p3.d',
@@ -105,14 +105,14 @@ export const PROJECTS: Project[] = [
         live: 'https://vekaltor.github.io/news-app/en',
     },
     {
-        bg: 'rgba(244,63,94,.08)',
+        bg: 'rgba(225,29,72,.16)',
         badgeKey: 'p4.b',
         titleKey: 'p4.t',
         descKey: 'p4.d',
-        chips: ['Angular', 'TypeScript', 'REST API', 'Responsive UI'],
+        chips: ['Angular', 'TypeScript', 'PrimeFlex', 'Responsive UI', 'Fast Learning'],
         github: 'https://github.com/Vekaltor/blogger',
         previewSrc: '/blogger-preview.png',
-        live: "https://vekaltor.github.io/blogger/",
+        live: 'https://vekaltor.github.io/blogger/',
     }
 ]
 

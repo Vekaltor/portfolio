@@ -48,7 +48,7 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                         <button
                             type="button"
                             onClick={() => setIsPreviewOpen(true)}
-                            className="cursor-none translate-y-[8px] rounded-[10px] border border-[var(--border)] bg-[rgba(12,14,12,.72)] px-4 py-2 text-[.72rem] font-semibold text-[var(--text)] opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                            className="cursor-none translate-y-[8px] rounded-[10px] border border-[var(--border)] bg-[rgba(12,14,12,.72)] px-4 py-2 text-[.72rem] font-semibold text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:border-[var(--accent)] hover:text-[var(--accent)]"
                         >
                             Podgląd
                         </button>
