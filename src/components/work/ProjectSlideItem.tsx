@@ -7,6 +7,7 @@ import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
 import ImagePreviewModal from "../ui/ImagePreviewModal.tsx";
 import {useLang} from "../../hooks/useLang.hook.ts";
+import ProjectImagePlaceholder from "./projectImagePlaceholder.tsx";
 
 type Props = SliderItemComponentProps<Project>
 
@@ -30,29 +31,35 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                 }}
             >
                 <div className="group relative h-[210px] w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg3)]">
-                    <img
-                        src={project.previewSrc}
-                        alt={title}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
+                    {project.previewSrc ? (
+                        <>
+                            <img
+                                src={project.previewSrc}
+                                alt={title}
+                                loading="lazy"
+                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                            />
 
-                    <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,8,.34),rgba(8,10,8,.08),transparent)] transition-colors duration-300 group-hover:bg-[rgba(8,10,8,.24)]" />
+                            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,8,.34),rgba(8,10,8,.08),transparent)] transition-colors duration-300 group-hover:bg-[rgba(8,10,8,.24)]" />
+
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <button
+                                    type="button"
+                                    onClick={() => setIsPreviewOpen(true)}
+                                    className="cursor-none translate-y-[8px] rounded-[10px] border border-[var(--border)] bg-[rgba(12,14,12,.72)] px-4 py-2 text-[.72rem] font-semibold text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                                >
+                                    Podgląd
+                                </button>
+                            </div>
+                        </>
+                    ) : (
+                        <ProjectImagePlaceholder bg={project.bg} title={title} />
+                    )}
 
                     <div
                         className="absolute inset-x-0 top-0 h-[6px]"
                         style={{ background: project.bg }}
                     />
-
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button
-                            type="button"
-                            onClick={() => setIsPreviewOpen(true)}
-                            className="cursor-none translate-y-[8px] rounded-[10px] border border-[var(--border)] bg-[rgba(12,14,12,.72)] px-4 py-2 text-[.72rem] font-semibold text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                        >
-                            Podgląd
-                        </button>
-                    </div>
                 </div>
 
                 <div className="px-[1.8rem] py-[1.6rem]">
