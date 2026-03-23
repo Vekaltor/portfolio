@@ -11,6 +11,10 @@ export type TranslationKey =
     | 'stack.motivational'
     | 'p1.b' | 'p1.t' | 'p1.d'
     | 'p2.b' | 'p2.t' | 'p2.d'
+    | 'p3.b' | 'p3.t' | 'p3.d'
+    | 'p4.b' | 'p4.t' | 'p4.d'
+    | 'p5.b' | 'p5.t' | 'p5.d'
+    | 'p6.b' | 'p6.t' | 'p6.d'
     | 'chy.t' | 'chy.s' | 'chy.l'
     | 'cc1.t' | 'cc1.s' | 'cc2.t' | 'cc2.s' | 'cc3.t' | 'cc3.s' | 'ccl'
     | 'test.eyebrow' | 'test.title'
@@ -69,6 +73,18 @@ const pl: Translations = {
     'p2.b': 'Projekt własny',
     'p2.t': 'Ravintola',
     'p2.d': 'Aplikacja webowa wspierająca zarządzanie restauracją - od obsługi zamówień po organizację pracy. Projekt skupiony na czytelnym UI, szybkim przepływie danych i praktycznej architekturze aplikacji.',
+    'p3.b': 'Projekt własny',
+    'p3.t': 'News App',
+    'p3.d': 'Aplikacja webowa do przeglądania aktualnych wiadomości z różnych źródeł. Integracja z zewnętrznym API, zarządzanie stanem przez Redux Toolkit oraz nacisk na szybki dostęp do treści i przejrzysty interfejs użytkownika.',
+    'p4.b': 'Projekt rekrutacyjny',
+    'p4.t': 'Blogger',
+    'p4.d': 'Aplikacja blogowa stworzona w Angularze jako pierwsze podejście do frameworka. W ciągu 2 dni zbudowałem działającą, responsywną aplikację z integracją API i czytelnym UI, co pozwoliło mi szybko wejść w ekosystem Angulara i rozpocząć pracę komercyjną.',
+    'p5.b': 'Projekt własny',
+    'p5.t': 'React Chat',
+    'p5.d': 'Aplikacja do komunikacji między znajomymi inspirowana Facebookiem. Rejestracja i logowanie przez własne API, czat w czasie rzeczywistym przez Socket.io, lista znajomych ze statusami online. Dane przechowywane w MongoDB, wiadomości buforowane w Redis.',
+    'p6.b': 'Projekt własny',
+    'p6.t': 'React Chat API',
+    'p6.d': 'Backend dla aplikacji React Chat. REST API w Express z autoryzacją JWT (tokeny w httponly cookies), walidacją formularzy przez @hapi/joi, wysyłką maili aktywacyjnych przez nodemailer oraz komunikacją w czasie rzeczywistym przez Socket.io. Dane w MongoDB, i18next do internacjonalizacji odpowiedzi.',
     'chy.t': 'Finalista HackYeah 2024',
     'chy.s': 'Największy hackathon w Europie · projekt CountryBike. Praca zespołowa, kreatywność i kod w 24h.',
     'chy.l': 'Zobacz projekt',
@@ -156,6 +172,18 @@ const en: Translations = {
     'p2.b': 'Personal project',
     'p2.t': 'Ravintola',
     'p2.d': 'A web application designed to support restaurant management - from handling orders to organizing daily operations. Focused on clean UI, fast data flow and practical application architecture.',
+    'p3.b': 'Personal project',
+    'p3.t': 'News App',
+    'p3.d': 'A web application for browsing real-time news from multiple sources. Integrates external API, uses Redux Toolkit for state management and focuses on fast content access and clean, user-friendly UI.',
+    'p4.b': 'Recruitment project',
+    'p4.t': 'Blogger',
+    'p4.d': 'A blog application built in Angular as my first exposure to the framework. Within 2 days I delivered a fully working, responsive app with API integration and clean UI, which helped me quickly onboard into Angular in a commercial environment.',
+    'p5.b': 'Personal project',
+    'p5.t': 'React Chat',
+    'p5.d': 'A real-time chat application inspired by Facebook. Features account registration with email activation, live messaging via Socket.io, friends list with online statuses, and a theme switcher. Data stored in MongoDB with Redis for message buffering.',
+    'p6.b': 'Personal project',
+    'p6.t': 'React Chat API',
+    'p6.d': 'Backend for the React Chat app. REST API built with Express featuring JWT auth (httponly cookies), form validation via @hapi/joi, activation emails via nodemailer, and real-time communication through Socket.io. Data stored in MongoDB with i18next for response internationalisation.',
     'chy.t': 'HackYeah 2024 Finalist',
     'chy.s': "Europe's largest hackathon · CountryBike project. Teamwork, creativity and code in 24h.",
     'chy.l': 'View project',
