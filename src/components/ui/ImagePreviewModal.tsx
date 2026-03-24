@@ -1,6 +1,7 @@
-import type {JSX} from 'react'
-import {useEffect} from 'react'
-import {createPortal} from 'react-dom'
+import type { JSX } from 'react'
+import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
+import { useMediaQuery } from 'react-responsive'
 
 type Props = {
     src?: string
@@ -9,21 +10,14 @@ type Props = {
     onClose: () => void
 }
 
-export default function ImagePreviewModal(props: Props): JSX.Element | null {
-    const {
-        src,
-        alt,
-        isOpen,
-        onClose,
-    } = props;
+export default function ImagePreviewModal({ src, alt, isOpen, onClose }: Props): JSX.Element | null {
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
     useEffect(() => {
         if (!isOpen) return
 
-        const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                onClose()
-            }
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') onClose()
         }
 
         document.body.style.overflow = 'hidden'
@@ -35,32 +29,58 @@ export default function ImagePreviewModal(props: Props): JSX.Element | null {
         }
     }, [isOpen, onClose])
 
+    const handleClick = (event: any) => {
+        event.stopPropagation();
+        onClose();
+    }
+
     if (!isOpen) return null
 
     return createPortal(
         <div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-[rgba(6,8,6,.82)] p-4 backdrop-blur-sm min-[900px]:p-8"
-            onClick={onClose}
+            className="fixed inset-0 z-[1000] flex items-center justify-center"
+            style={{ background: 'rgba(4,5,4,.93)', backdropFilter: 'blur(12px)' }}
+            onClick={handleClick}
         >
-            <div
-                className="relative max-h-[92vh] w-full max-w-[1280px] overflow-hidden rounded-[20px] border border-[var(--border)] bg-[var(--bg)] shadow-[0_24px_80px_rgba(0,0,0,.45)]"
-                onClick={(event) => event.stopPropagation()}
+            <button
+                type="button"
+                onClick={handleClick}
+                className="cursor-none absolute right-5 top-5 z-[2] flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg2)] text-[var(--text2)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                aria-label="Zamknij"
             >
-                <button
-                    type="button"
-                    onClick={onClose}
-                    className="cursor-none absolute right-4 top-4 z-[2] inline-flex items-center rounded-[10px] border border-[var(--border)] bg-[var(--bg2)] px-3 py-2 text-[.74rem] font-medium text-[var(--text2)] transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                >
-                    Zamknij
-                </button>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+                </svg>
+            </button>
 
-                <div className="flex max-h-[92vh] items-center justify-center bg-[var(--bg3)] p-4 min-[900px]:p-6">
-                    <img
-                        src={src}
-                        alt={alt}
-                        className="max-h-[85vh] w-auto max-w-full object-contain"
-                    />
-                </div>
+            <div
+                className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-[var(--border)] bg-[var(--bg2)] px-4 py-1.5 text-[.68rem] font-medium text-[var(--text3)] backdrop-blur-sm"
+            >
+                {alt}
+            </div>
+
+            <div
+                className="flex items-center justify-center"
+                style={{
+                    width: isMobile ? '100vw' : 'auto',
+                    height: isMobile ? '100dvh' : 'auto',
+                    padding: isMobile ? '3rem 1rem' : '2rem',
+                }}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <img
+                    src={src}
+                    alt={alt}
+                    style={{
+                        maxWidth: isMobile ? '100%' : '90vw',
+                        maxHeight: isMobile ? '100%' : '90vh',
+                        width: 'auto',
+                        height: 'auto',
+                        objectFit: 'contain',
+                        borderRadius: isMobile ? '12px' : '16px',
+                        boxShadow: '0 32px 80px rgba(0,0,0,.6)',
+                    }}
+                />
             </div>
         </div>,
         document.body

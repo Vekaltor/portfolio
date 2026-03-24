@@ -135,13 +135,18 @@ export const PROJECTS: Project[] = [
 
 export const CERTS: Certificate[] = [
     {
-        titleKey: 'chy.t',
-        subtitleKey: 'chy.s',
-        linkKey: 'chy.l',
+        title: 'cc1.t',
         issuer: 'HackYeah',
         year: '2024',
         href: '/HackYeah2024-cert.pdf',
         previewSrc: '/HackYeah2024-cert-preview.jpg',
+    },
+    {
+        title: 'cc2.t',
+        issuer: 'EF SET',
+        year: '2026',
+        href: '/ef_set_certificate.pdf',
+        previewSrc: '/ef_set_certificate-preview.png',
     },
     // {
     //   titleKey: 'cc1.t',

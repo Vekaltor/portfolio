@@ -9,6 +9,7 @@ export type TranslationKey =
     | 'tab.proj' | 'tab.stack' | 'tab.certs'
     | 'stack.cat.lang' | 'stack.cat.fw' | 'stack.cat.tools' | 'stack.cat.learn'
     | 'stack.motivational'
+    | 'p.previewBtn' | 'p.closeBtn' | 'p.moreBtn' | 'p.enlargeBtn' | 'p.captionImage'
     | 'p1.b' | 'p1.t' | 'p1.d'
     | 'p2.b' | 'p2.t' | 'p2.d'
     | 'p3.b' | 'p3.t' | 'p3.d'
@@ -16,7 +17,8 @@ export type TranslationKey =
     | 'p5.b' | 'p5.t' | 'p5.d'
     | 'p6.b' | 'p6.t' | 'p6.d'
     | 'chy.t' | 'chy.s' | 'chy.l'
-    | 'cc1.t' | 'cc1.s' | 'cc2.t' | 'cc2.s' | 'cc3.t' | 'cc3.s' | 'ccl'
+    | 'cc1.t' | 'cc2.t'
+    | 'ccl'
     | 'test.eyebrow' | 'test.title'
     | 't1q' | 't1r' | 't2q' | 't2r' | 't3q' | 't3r'
     | 'contact.eyebrow' | 'contact.title' | 'contact.sub' | 'contact.dl'
@@ -67,6 +69,11 @@ const pl: Translations = {
     'stack.cat.tools': 'Narzędzia & Infra',
     'stack.cat.learn': 'Chcę się nauczyć',
     'stack.motivational': "Technologia się nie zatrzymuje - <span class='text-[var(--accent)] not-italic font-semibold'>ja też nie.</span> Każdy sprint to nowe umiejętności.",
+    'p.closeBtn' : 'Zamknij',
+    'p.moreBtn': 'Czytaj więcej',
+    'p.previewBtn': 'Podgląd',
+    'p.enlargeBtn': 'Powiększ',
+    'p.captionImage': 'zdjęcie',
     'p1.b': 'Praca inżynierska',
     'p1.t': 'No-code Automation SaaS',
     'p1.d': 'Platforma do automatyzacji procesów biznesowych w modelu no-code. Zespołowy projekt inżynierski oparty o architekturę SaaS, integracje i wizualny edytor przepływów.',
@@ -88,13 +95,9 @@ const pl: Translations = {
     'chy.t': 'Finalista HackYeah 2024',
     'chy.s': 'Największy hackathon w Europie · projekt CountryBike. Praca zespołowa, kreatywność i kod w 24h.',
     'chy.l': 'Zobacz projekt',
-    'cc1.t': 'Cisco CCNA 1 — Intro to Networks',
-    'cc1.s': 'Podstawy sieci, model OSI, TCP/IP, konfiguracja urządzeń.',
     'ccl': 'Zobacz certyfikat',
-    'cc2.t': 'Cisco CCNA 2 — Switching & Routing',
-    'cc2.s': 'Routing dynamiczny (OSPF), VLAN, STP i EtherChannel.',
-    'cc3.t': 'Cisco CCNA 3 — Enterprise Networking',
-    'cc3.s': 'Zaawansowane protokoły routingu, bezpieczeństwo sieci, NAT.',
+    'cc1.t': 'Finalista HackYeah 2024',
+    'cc2.t': 'Certyfikat EF SET - język angielski (B2)',
     'test.eyebrow': 'Rekomendacje',
     'test.title': 'Co mówią o mnie inni<span class="text-[var(--accent)]">.</span>',
     't1q': 'Kamil to frontendowiec z dużą dbałością o jakość i szczegóły. Samodzielnie rozwijał aplikację, podejmował trafne decyzje i dowoził stabilne rozwiązania. Szybko się uczy i przekłada wiedzę na działający produkt.',
@@ -166,6 +169,11 @@ const en: Translations = {
     'stack.cat.tools': 'Tools & Infrastructure',
     'stack.cat.learn': 'Want to learn',
     'stack.motivational': "Technology never stop, <span class='text-[var(--accent)] not-italic font-semibold'>and neither do I.</span> Every sprint is a new skill.",
+    'p.closeBtn' : 'Close',
+    'p.moreBtn': 'Read more',
+    'p.previewBtn': 'Preview',
+    'p.enlargeBtn': 'Zoom in',
+    'p.captionImage': 'image',
     'p1.b': 'Engineering thesis',
     'p1.t': 'No-code Automation SaaS',
     'p1.d': 'A no-code platform for automating business processes. A team engineering project built around SaaS architecture, integrations and a visual workflow editor.',
@@ -187,13 +195,9 @@ const en: Translations = {
     'chy.t': 'HackYeah 2024 Finalist',
     'chy.s': "Europe's largest hackathon · CountryBike project. Teamwork, creativity and code in 24h.",
     'chy.l': 'View project',
-    'cc1.t': 'Cisco CCNA 1 — Intro to Networks',
-    'cc1.s': 'Network fundamentals, OSI model, TCP/IP, device configuration.',
     'ccl': 'View certificate',
-    'cc2.t': 'Cisco CCNA 2 — Switching & Routing',
-    'cc2.s': 'Dynamic routing (OSPF), VLAN networks, STP and EtherChannel.',
-    'cc3.t': 'Cisco CCNA 3 — Enterprise Networking',
-    'cc3.s': 'Advanced routing protocols, network security, NAT.',
+    'cc1.t': 'HackYeah 2024 Finalist',
+    'cc2.t': 'EF SET English Certificate - B2 level',
     'test.eyebrow': 'Recommendations',
     'test.title': 'What others say<span class="text-[var(--accent)]">.</span>',
     't1q': 'Kamil is a frontend developer with strong attention to quality and detail. He independently drove application development, made solid decisions and delivered stable solutions. He learns fast and turns knowledge into working products.',

@@ -5,9 +5,10 @@ import {useState} from "react";
 import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
-import ImagePreviewModal from "../ui/ImagePreviewModal.tsx";
 import {useLang} from "../../hooks/useLang.hook.ts";
 import ProjectImagePlaceholder from "./projectImagePlaceholder.tsx";
+import {useTruncate} from "../../hooks/useTruncateOptions.hook.ts";
+import ProjectDetailsModal from "./ProjectDetailsModal.tsx";
 
 type Props = SliderItemComponentProps<Project>
 
@@ -22,6 +23,11 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
     const isActive = state === 'active'
     const title = t(project.titleKey as TranslationKey)
 
+    const {textRef, isClamped, toggle} = useTruncate({
+        lines: 4,
+        onExpand: () => setIsPreviewOpen(true),
+    });
+
     return (
         <>
             <article
@@ -30,17 +36,19 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                     boxShadow: isActive ? 'var(--proj-shadow)' : 'none',
                 }}
             >
-                <div className="group relative h-[210px] w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg3)]">
+                <div
+                    className="group relative h-[210px] w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg3)]">
                     {project.previewSrc ? (
                         <>
                             <img
-                                src={project.previewSrc}
+                                src={Array.isArray(project.previewSrc) ? project.previewSrc[0] : project.previewSrc}
                                 alt={title}
                                 loading="lazy"
                                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                             />
 
-                            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,8,.34),rgba(8,10,8,.08),transparent)] transition-colors duration-300 group-hover:bg-[rgba(8,10,8,.24)]" />
+                            <div
+                                className="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,10,8,.34),rgba(8,10,8,.08),transparent)] transition-colors duration-300 group-hover:bg-[rgba(8,10,8,.24)]"/>
 
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <button
@@ -48,17 +56,17 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                                     onClick={() => setIsPreviewOpen(true)}
                                     className="cursor-none translate-y-[8px] rounded-[10px] border border-[var(--border)] bg-[rgba(12,14,12,.72)] px-4 py-2 text-[.72rem] font-semibold text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:border-[var(--accent)] hover:text-[var(--accent)]"
                                 >
-                                    Podgląd
+                                    {t("p.previewBtn")}
                                 </button>
                             </div>
                         </>
                     ) : (
-                        <ProjectImagePlaceholder bg={project.bg} title={title} />
+                        <ProjectImagePlaceholder bg={project.bg} title={title}/>
                     )}
 
                     <div
                         className="absolute inset-x-0 top-0 h-[6px]"
-                        style={{ background: project.bg }}
+                        style={{background: project.bg}}
                     />
                 </div>
 
@@ -75,17 +83,31 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                         {title}
                     </h3>
 
-                    <p className="mb-[1.15rem] text-[.83rem] leading-[1.72] text-[var(--text2)] line-clamp-[4]">
-                        {t(project.descKey as TranslationKey)}
-                    </p>
+                    <div className="mb-[1.15rem]">
+                        <p
+                            ref={textRef}
+                            className="text-[.83rem] leading-[1.72] text-[var(--text2)] line-clamp-[4]"
+                        >
+                            {t(project.descKey as TranslationKey)}
+                        </p>
+
+                        {isClamped && (
+                            <button
+                                type="button"
+                                onClick={toggle}
+                                className="mt-1 text-[.75rem] font-semibold text-[var(--accent)] hover:underline"
+                            >
+                                {t("p.moreBtn")}
+                            </button>
+                        )}
+                    </div>
 
                     <ProjectChips chips={project.chips}/>
                 </div>
             </article>
 
-            <ImagePreviewModal
-                src={project.previewSrc}
-                alt={title}
+            <ProjectDetailsModal
+                project={project}
                 isOpen={isPreviewOpen}
                 onClose={() => setIsPreviewOpen(false)}
             />
