@@ -25,7 +25,7 @@ export default function CertSlideItem(props: Props): JSX.Element {
                     <div className="relative aspect-[210/297] w-full overflow-hidden">
                         <img
                             src={cert.previewSrc}
-                            alt={t(cert.titleKey as TranslationKey)}
+                            alt={t(cert.title as TranslationKey)}
                             loading="lazy"
                             className={`h-full w-full object-cover transition-transform duration-500 ${
                                 isActive ? 'scale-[1.02]' : 'scale-100'
@@ -47,7 +47,7 @@ export default function CertSlideItem(props: Props): JSX.Element {
                 <div className="border-t border-[var(--border)] px-4 py-3">
                     <div
                         className="mb-1 text-[.88rem] font-semibold leading-[1.3] tracking-[-0.02em] text-[var(--text)] transition-colors">
-                        {t(cert.titleKey as TranslationKey)}
+                        {t(cert.title as TranslationKey)}
                     </div>
 
                     <div

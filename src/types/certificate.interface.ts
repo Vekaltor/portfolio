@@ -3,7 +3,5 @@ export interface Certificate {
     issuer: string
     href: string
     previewSrc: string
-    titleKey: string
-    subtitleKey: string
-    linkKey: string
+    title: string
 }
