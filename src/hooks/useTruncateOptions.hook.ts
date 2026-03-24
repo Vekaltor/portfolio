@@ -1,4 +1,5 @@
-import {CSSProperties, RefObject, useEffect, useRef, useState} from "react";
+import type {CSSProperties, RefObject} from "react";
+import {useEffect, useRef, useState} from "react";
 
 interface UseTruncateOptions {
     lines?: number;
