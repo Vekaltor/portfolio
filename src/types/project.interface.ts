@@ -6,5 +6,5 @@ export interface Project {
     chips: string[]
     live?: string
     github?: string
-    previewSrc?: string
+    previewSrc?: string[] | string
 }

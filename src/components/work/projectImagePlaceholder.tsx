@@ -17,7 +17,6 @@ export default function ProjectImagePlaceholder({ bg, title }: Props): JSX.Eleme
                  radial-gradient(ellipse at 20% 80%, color-mix(in srgb, var(--accent) ${theme === 'light' ? '20%' : '10%'}, transparent) 0%, transparent 60%)`
             }}
         >
-            {/* Grid pattern */}
             <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{
@@ -26,7 +25,6 @@ export default function ProjectImagePlaceholder({ bg, title }: Props): JSX.Eleme
                 }}
             />
 
-            {/* Icon */}
             <div
                 className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--border)] bg-[var(--bg2)] shadow-lg"
                 style={{ boxShadow: `0 0 24px ${bg}` }}
@@ -46,7 +44,6 @@ export default function ProjectImagePlaceholder({ bg, title }: Props): JSX.Eleme
                 </svg>
             </div>
 
-            {/* Title */}
             <span className="relative z-10 text-[.72rem] font-semibold tracking-[.08em] uppercase text-[var(--text3)]">
                 {title}
             </span>

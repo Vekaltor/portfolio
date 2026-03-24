@@ -9,6 +9,7 @@ export type TranslationKey =
     | 'tab.proj' | 'tab.stack' | 'tab.certs'
     | 'stack.cat.lang' | 'stack.cat.fw' | 'stack.cat.tools' | 'stack.cat.learn'
     | 'stack.motivational'
+    | 'p.previewBtn' | 'p.closeBtn' | 'p.moreBtn' | 'p.enlargeBtn' | 'p.captionImage'
     | 'p1.b' | 'p1.t' | 'p1.d'
     | 'p2.b' | 'p2.t' | 'p2.d'
     | 'p3.b' | 'p3.t' | 'p3.d'
@@ -67,6 +68,11 @@ const pl: Translations = {
     'stack.cat.tools': 'Narzędzia & Infra',
     'stack.cat.learn': 'Chcę się nauczyć',
     'stack.motivational': "Technologia się nie zatrzymuje - <span class='text-[var(--accent)] not-italic font-semibold'>ja też nie.</span> Każdy sprint to nowe umiejętności.",
+    'p.closeBtn' : 'Zamknij',
+    'p.moreBtn': 'Czytaj więcej',
+    'p.previewBtn': 'Podgląd',
+    'p.enlargeBtn': 'Powiększ',
+    'p.captionImage': 'zdjęcie',
     'p1.b': 'Praca inżynierska',
     'p1.t': 'No-code Automation SaaS',
     'p1.d': 'Platforma do automatyzacji procesów biznesowych w modelu no-code. Zespołowy projekt inżynierski oparty o architekturę SaaS, integracje i wizualny edytor przepływów.',
@@ -166,6 +172,11 @@ const en: Translations = {
     'stack.cat.tools': 'Tools & Infrastructure',
     'stack.cat.learn': 'Want to learn',
     'stack.motivational': "Technology never stop, <span class='text-[var(--accent)] not-italic font-semibold'>and neither do I.</span> Every sprint is a new skill.",
+    'p.closeBtn' : 'Close',
+    'p.moreBtn': 'Read more',
+    'p.previewBtn': 'Preview',
+    'p.enlargeBtn': 'Zoom in',
+    'p.captionImage': 'image',
     'p1.b': 'Engineering thesis',
     'p1.t': 'No-code Automation SaaS',
     'p1.d': 'A no-code platform for automating business processes. A team engineering project built around SaaS architecture, integrations and a visual workflow editor.',
