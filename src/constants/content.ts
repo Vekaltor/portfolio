@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
         descKey: 'p5.d',
         chips: ['React', 'TypeScript', 'Socket.io', 'Redux Toolkit', 'MongoDB', 'Redis', 'styled-components'],
         github: 'https://github.com/Vekaltor/react-chat',
-        previewSrc: '/react-chat-preview.png',
+        previewSrc: '/react_chat-preview.png',
     },
     {
         bg: 'rgba(124,58,237,.10)',
