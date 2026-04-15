@@ -56,7 +56,12 @@ export default function AboutTimeline() {
     }, [])
 
     const getDateLabel = (date: string) => {
-        return date.includes('tl.now') ? `11/2023 — ${t('tl.now')}` : date
+        if (date.endsWith('tl.now')) {
+            const [from] = date.split(' - ')
+            return `${from} - ${t('tl.now')}`
+        }
+
+        return date
     }
 
     return (
