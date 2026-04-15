@@ -5,7 +5,7 @@ import {useReveal} from "../hooks/useReveal.hook.ts";
 import {useMediaQuery} from "react-responsive";
 import {TESTIMONIALS} from "../constants/content.ts";
 import RecommendationHeader from "./recommendations/RecommendationHeader.tsx";
-import {chunkArray} from "../helpers/chunkArray.ts";
+import {chunkArrayHelper} from "../helpers/chunkArray.helper.ts";
 
 
 export default function Recommendations() {
@@ -16,7 +16,7 @@ export default function Recommendations() {
     const itemsPerSlide = isDesktop ? 2 : 1
 
     const slides = useMemo(() => {
-        return chunkArray(TESTIMONIALS, itemsPerSlide)
+        return chunkArrayHelper(TESTIMONIALS, itemsPerSlide)
     }, [itemsPerSlide])
 
     useEffect(() => {

@@ -6,6 +6,6 @@ const CV_MAP: Record<Lang, string> = {
     en: '/Kamil_Wojcik_Frontend_Developer_CV_EN.pdf',
 }
 
-export function getCvHref(lang: Lang): string {
+export function getCvHrefHelper(lang: Lang): string {
     return CV_MAP[lang] ?? CV_MAP.en
 }

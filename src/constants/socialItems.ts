@@ -1,5 +1,5 @@
 import type { FooterSocialItem } from "../types/footerSocialItem.interface"
-import { getCvHref } from "../helpers/getCvHref"
+import { getCvHrefHelper } from "../helpers/getCvHref.helper.ts"
 
 export const getFooterSocialItems = (lang: 'pl' | 'en'): FooterSocialItem[] => [
     {
@@ -13,7 +13,7 @@ export const getFooterSocialItems = (lang: 'pl' | 'en'): FooterSocialItem[] => [
         icon: 'linkedin',
     },
     {
-        href: getCvHref(lang),
+        href: getCvHrefHelper(lang),
         label: 'footer.nav.cv',
         icon: 'download',
         isDownload: true,

@@ -19,7 +19,7 @@ function ThemeSwitcher(props: ThemeSwitcherProps) {
 
     return (
         <button onClick={toggleTheme} className={buttonClassName + " " + mobileButtonClass} type="button">
-            {theme === 'dark'
+            {theme === 'light'
                 ? <MoonIcon className={mobileIconClass}/>
                 : <SunIcon className={mobileIconClass}/>
             }

@@ -1,4 +1,4 @@
-export function chunkArray<T>(items: T[], size: number): T[][] {
+export function chunkArrayHelper<T>(items: T[], size: number): T[][] {
     const chunks: T[][] = []
 
     for (let i = 0; i < items.length; i += size) {

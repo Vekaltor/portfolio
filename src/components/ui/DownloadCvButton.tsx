@@ -2,7 +2,7 @@ import {classNames} from '../../helpers/classNames.helper.ts'
 import DownloadIcon from "@assets/icons/download.svg?react"
 
 import {useLang} from "../../hooks/useLang.hook.ts";
-import {getCvHref} from "../../helpers/getCvHref.ts";
+import {getCvHrefHelper} from "../../helpers/getCvHref.helper.ts";
 
 interface DownloadCvButtonProps {
     isMobile?: boolean
@@ -14,7 +14,7 @@ function DownloadCvButton(props: DownloadCvButtonProps) {
 
     return (
         <a
-            href={getCvHref(lang)}
+            href={getCvHrefHelper(lang)}
             download
             className={classNames(
                 'inline-flex items-center gap-[.4rem] font-semibold rounded-xl transition-all whitespace-nowrap',
