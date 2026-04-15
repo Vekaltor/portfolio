@@ -1,8 +1,9 @@
-import {createContext, type ReactNode, useState} from 'react'
+import {createContext, type ReactNode, useEffect, useState} from 'react'
 import {type TranslationKey, translations} from '../data/i18n'
 import type {Lang} from "../types/lang.type.ts";
 import localStorageService from "../helpers/localStorage.service.ts";
 import {LocalStorageKeys} from "../types/localStorageKeys.enum.ts";
+import {isLang, readLangFromUrl, removeLangFromUrl} from "../helpers/lang.helper.ts";
 
 export interface LangContextValue {
     lang: Lang
@@ -12,11 +13,18 @@ export interface LangContextValue {
 
 export const LangContext = createContext<LangContextValue | null>(null)
 
+const getInitialLang = (): Lang => {
+    const urlLang = readLangFromUrl()
+    if (urlLang) return urlLang
+
+    const stored = localStorageService.get<Lang>(LocalStorageKeys.LANG)
+    if (isLang(stored)) return stored
+
+    return 'pl'
+}
+
 export function LangProvider({children}: { children: ReactNode }) {
-    const [lang, setLang] = useState<Lang>(() => {
-        const saved = localStorageService.get<Lang>(LocalStorageKeys.LANG)
-        return saved === 'en' || saved === 'pl' ? saved : 'pl'
-    })
+    const [lang, setLang] = useState<Lang>(getInitialLang)
 
     const t = (key: TranslationKey): string => translations[lang][key] ?? key
 
@@ -25,6 +33,15 @@ export function LangProvider({children}: { children: ReactNode }) {
         localStorageService.save(LocalStorageKeys.LANG, next)
         return next
     })
+
+    useEffect(() => {
+        removeLangFromUrl()
+    }, [])
+
+    useEffect(() => {
+        localStorageService.save(LocalStorageKeys.LANG, lang)
+        document.documentElement.lang = lang
+    }, [lang])
 
     return (
         <LangContext.Provider value={{lang, t, toggle}}>
