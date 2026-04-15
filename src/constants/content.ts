@@ -50,11 +50,19 @@ export const HERO_MAIN_TECHNOLOGY_PILLS: TechIcon[] = [
 export const TIMELINE_ITEMS: TimelineItem[] = [
     {
         id: 'bbcr',
-        date: '11/2023 — tl.now',
+        date: '11/2023 - tl.now',
         company: 'BBCR sp. z o.o.',
         roleKey: 'tl.r1',
         descKey: 'tl.bbcr.desc',
         tags: ['React', 'Angular', 'PrimeNG', 'Tailwind CSS', 'FlutterFlow', 'PWA', 'WCAG', 'CI/CD', 'REST API'],
+    },
+    {
+        id: 'freelancer',
+        date: '02/2026 - tl.now',
+        company: 'Freelancer',
+        roleKey: 'tl.r3',
+        descKey: 'tl.freelancer.desc',
+        tags: ['Flutter', 'Spring Boot', 'Teamwork' , 'Figma UI/UX'],
     },
     {
         id: 'hackyeah',

@@ -7,8 +7,8 @@ import {useLang} from "../../hooks/useLang.hook.ts";
 export default function AboutTimeline() {
     const {t} = useLang()
 
-    const timelineRef = useRef<HTMLDivElement>(null)
-    const fillRef = useRef<HTMLDivElement>(null)
+    const timelineRef = useRef<HTMLDivElement| null>(null)
+    const fillRef = useRef<HTMLDivElement | null>(null)
     const dotRefs = useRef<(HTMLDivElement | null)[]>([])
     const contentRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -56,7 +56,12 @@ export default function AboutTimeline() {
     }, [])
 
     const getDateLabel = (date: string) => {
-        return date.includes('tl.now') ? `11/2023 — ${t('tl.now')}` : date
+        if (date.endsWith('tl.now')) {
+            const [from] = date.split(' - ')
+            return `${from} - ${t('tl.now')}`
+        }
+
+        return date
     }
 
     return (

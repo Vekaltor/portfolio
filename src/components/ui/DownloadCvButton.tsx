@@ -2,6 +2,7 @@ import {classNames} from '../../helpers/classNames.helper.ts'
 import DownloadIcon from "@assets/icons/download.svg?react"
 
 import {useLang} from "../../hooks/useLang.hook.ts";
+import {getCvHref} from "../../helpers/getCvHref.ts";
 
 interface DownloadCvButtonProps {
     isMobile?: boolean
@@ -9,11 +10,11 @@ interface DownloadCvButtonProps {
 
 function DownloadCvButton(props: DownloadCvButtonProps) {
     const {isMobile = false} = props
-    const {t} = useLang();
+    const {t, lang} = useLang();
 
     return (
         <a
-            href="/CV_Kamil_Wojcik.pdf"
+            href={getCvHref(lang)}
             download
             className={classNames(
                 'inline-flex items-center gap-[.4rem] font-semibold rounded-xl transition-all whitespace-nowrap',

@@ -1,6 +1,7 @@
-import type {FooterSocialItem} from "../types/footerSocialItem.interface.ts";
+import type { FooterSocialItem } from "../types/footerSocialItem.interface"
+import { getCvHref } from "../helpers/getCvHref"
 
-export const FOOTER_SOCIAL_ITEMS: FooterSocialItem[] = [
+export const getFooterSocialItems = (lang: 'pl' | 'en'): FooterSocialItem[] => [
     {
         href: 'https://github.com/Vekaltor',
         label: 'GitHub',
@@ -12,7 +13,7 @@ export const FOOTER_SOCIAL_ITEMS: FooterSocialItem[] = [
         icon: 'linkedin',
     },
     {
-        href: '/CV_Kamil_Wojcik.pdf',
+        href: getCvHref(lang),
         label: 'footer.nav.cv',
         icon: 'download',
         isDownload: true,

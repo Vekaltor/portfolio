@@ -3,8 +3,9 @@ export type TranslationKey =
     | 'hero.badge' | 'hero.sub' | 'hero.cta1' | 'hero.cta2'
     | 'stat.exp' | 'stat.com' | 'stat.certValue' | 'stat.certLabel'
     | 'about.eyebrow' | 'about.title' | 'about.p1' | 'about.p2' | 'about.p3'
-    | 'tl.now' | 'tl.r1' | 'tl.r2'
+    | 'tl.now' | 'tl.r1' | 'tl.r2' | 'tl.r3'
     | 'tl.bbcr.desc' | 'tl.hy.role' | 'tl.hy.desc' | 'tl.pl.desc'
+    | 'tl.freelancer.desc'
     | 'work.eyebrow' | 'work.title'
     | 'tab.proj' | 'tab.stack' | 'tab.certs'
     | 'stack.cat.lang' | 'stack.cat.fw' | 'stack.cat.tools' | 'stack.cat.learn'
@@ -55,10 +56,12 @@ const pl: Translations = {
     'tl.now': 'obecnie',
     'tl.r1': 'Front-end Developer',
     'tl.r2': 'Informatyka - Inżynier',
+    'tl.r3': 'Flutter Developer',
     'tl.bbcr.desc': 'Tworzę dedykowane aplikacje webowe w React i Angular - od analizy wymagań po deploy. Buduję PWA, panele admin z PrimeNG (WCAG), konfiguruję CI/CD i wdrażam aplikacje mobilne (FlutterFlow) do sklepów.',
     'tl.hy.role': 'Finalista - projekt CountryBike',
     'tl.hy.desc': 'Największy hackathon w Europie - 24h, zespół, presja i działający produkt na końcu. Projekt CountryBike zdobył uznanie jury i miejsce w finale.',
     'tl.pl.desc': 'Praca inżynierska: platforma do automatyzacji procesów biznesowych w modelu no-code (jak make.com). Projekt zespołowy - architektura SaaS, integracje, edytor wizualny przepływów.',
+    'tl.freelancer.desc': 'Współtworzenie aplikacji mobilnej rozwijanej w oparciu o realne potrzeby użytkowników. Wpływ na warstwę wizualną i UX (Figma) oraz współdecydowanie o kierunku produktu. Implementacja warstwy mobilnej w Flutter z wykorzystaniem Clean Architecture (MVVM) oraz tworzenie narzędzi do analizy wydajności kluczowych mechanizmów.',
     'work.eyebrow': 'Moja praca',
     'work.title': 'Projekty, stack i certyfikaty<span class="text-[var(--accent)]">.</span>',
     'tab.proj': 'Projekty',
@@ -155,10 +158,12 @@ const en: Translations = {
     'tl.now': 'present',
     'tl.r1': 'Front-end Developer',
     'tl.r2': 'Computer Science - B.Eng.',
+    'tl.r3': 'Flutter Developer',
     'tl.bbcr.desc': 'Building dedicated web apps in React and Angular - from requirements to production deploy. PWAs, PrimeNG admin panels (WCAG), CI/CD setup, FlutterFlow mobile apps published to stores.',
     'tl.hy.role': 'Finalist - CountryBike project',
     'tl.hy.desc': "Europe's largest hackathon - 24h, a team, pressure and a working product at the end. CountryBike earned jury recognition and a place in the finals.",
     'tl.pl.desc': "Engineering thesis: business process automation platform in no-code model (like make.com). Team project - SaaS architecture, integrations, visual flow editor.",
+    'tl.freelancer.desc': 'Co-developing a mobile application driven by real user needs. Contributing to UX and visual direction (Figma) and influencing product decisions. Building the app in Flutter using Clean Architecture (MVVM) with a focus on scalability. Creating performance analysis tools for key application mechanisms.',
     'work.eyebrow': 'My work',
     'work.title': 'Projects, stack & certifications<span class="text-[var(--accent)]">.</span>',
     'tab.proj': 'Projects',

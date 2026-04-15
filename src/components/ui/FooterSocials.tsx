@@ -3,13 +3,13 @@ import GithubIcon from '@assets/icons/github.svg?react'
 import LinkedinIcon from '@assets/icons/linkedin.svg?react'
 import FooterSocialLink from './FooterSocialLink'
 import type {FooterSocialItem} from "../../types/footerSocialItem.interface.ts";
-import {FOOTER_SOCIAL_ITEMS} from "../../constants/socialItems.ts";
+import { getFooterSocialItems } from "../../constants/socialItems"
 import type {JSX} from "react";
 import {useLang} from "../../hooks/useLang.hook.ts";
 
 
 function FooterSocials() {
-    const {t} = useLang()
+    const {t, lang} = useLang()
 
     const getIcon = (icon: FooterSocialItem['icon']): JSX.Element => {
         if (icon === 'github') {
@@ -23,6 +23,8 @@ function FooterSocials() {
         return <DownloadIcon className="h-[15px] w-[15px] stroke-current"/>
     }
 
+    const items = getFooterSocialItems(lang)
+
     return (
         <div>
             <p className="mb-[.9rem] text-[.65rem] font-bold uppercase tracking-[.14em] text-[var(--text3)]">
@@ -30,7 +32,7 @@ function FooterSocials() {
             </p>
 
             <div className="flex flex-col gap-[.65rem]">
-                {FOOTER_SOCIAL_ITEMS.map((item) => {
+                {items.map((item) => {
                     return (
                         <FooterSocialLink
                             key={`${item.icon}-${item.href}`}
