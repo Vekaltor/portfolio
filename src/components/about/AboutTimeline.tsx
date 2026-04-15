@@ -7,8 +7,8 @@ import {useLang} from "../../hooks/useLang.hook.ts";
 export default function AboutTimeline() {
     const {t} = useLang()
 
-    const timelineRef = useRef<HTMLDivElement>(null)
-    const fillRef = useRef<HTMLDivElement>(null)
+    const timelineRef = useRef<HTMLDivElement| null>(null)
+    const fillRef = useRef<HTMLDivElement | null>(null)
     const dotRefs = useRef<(HTMLDivElement | null)[]>([])
     const contentRefs = useRef<(HTMLDivElement | null)[]>([])
 

@@ -7,9 +7,10 @@ import GithubIcon from '@assets/icons/github.svg?react'
 import DownloadIcon from '@assets/icons/download.svg?react'
 import ContactForm from "./ContactForm.tsx";
 import {useLang} from "../../hooks/useLang.hook.ts";
+import {getCvHref} from "../../helpers/getCvHref.ts";
 
 function ContactIntro() {
-    const {t} = useLang()
+    const {t, lang} = useLang()
     const leftRef = useReveal<HTMLDivElement>()
 
     return (
@@ -68,7 +69,7 @@ function ContactIntro() {
 
                 <ContactLink
                     item={{
-                        href: '/CV_Kamil_Wojcik.pdf',
+                        href: getCvHref(lang),
                         label: t('contact.dl'),
                         icon: <DownloadIcon className="h-4 w-4 text-[var(--accent)]"/>,
                         download: true,
