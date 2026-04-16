@@ -49,11 +49,11 @@ export const HERO_MAIN_TECHNOLOGY_PILLS: TechIcon[] = [
 
 export const TIMELINE_ITEMS: TimelineItem[] = [
     {
-        id: 'bbcr',
+        id: 'unitasnet',
         date: '11/2023 - tl.now',
-        company: 'BBCR sp. z o.o.',
+        company: 'UnitasNET',
         roleKey: 'tl.r1',
-        descKey: 'tl.bbcr.desc',
+        descKey: 'tl.unitasnet.desc',
         tags: ['React', 'Angular', 'PrimeNG', 'Tailwind CSS', 'FlutterFlow', 'PWA', 'WCAG', 'CI/CD', 'REST API'],
     },
     {
