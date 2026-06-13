@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import useParallaxAnimate from '../../hooks/useParallaxAnimate.hook.ts'
+import avatar from '@assets/avatar.jpg'
 
 function HeroPhoto() {
     const heroPhotoRef = useRef<HTMLDivElement | null>(null)
@@ -24,7 +25,7 @@ function HeroPhoto() {
             <div className="ring2 absolute inset-[-18px] rounded-full border border-dashed border-[rgba(74,222,128,.09)] sm:inset-[-22px] md:inset-[-28px]" />
 
             <img
-                src="/avatar.jpg"
+                src={avatar}
                 alt="Kamil Wójcik"
                 className="relative z-[1] h-[188px] w-[188px] rounded-full border-[2.5px] border-[rgba(74,222,128,.28)] object-cover object-top transition-all duration-400 hover:scale-[1.04] hover:shadow-[0_0_56px_rgba(74,222,128,.22)] sm:h-[220px] sm:w-[220px] md:h-[272px] md:w-[272px]"
             />

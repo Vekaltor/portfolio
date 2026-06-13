@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react'
-import {TIMELINE_ITEMS} from '../../constants/content.ts'
+import {TIMELINE_ITEMS} from '../../constants/timeline.ts'
 import type {TranslationKey} from '../../data/i18n'
 
 import {useLang} from "../../hooks/useLang.hook.ts";
