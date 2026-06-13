@@ -40,28 +40,28 @@ function Cursor() {
             animationFrameId = requestAnimationFrame(animateRing)
         }
 
-        const handleInteractiveEnter = () => document.body.classList.add('hov')
-        const handleInteractiveLeave = () => document.body.classList.remove('hov')
-
-        const interactiveElements = document.querySelectorAll<HTMLElement>('a, button')
+        const handleInteractiveEnter = (e: MouseEvent) => {
+            if ((e.target as HTMLElement).closest('a, button')) {
+                document.body.classList.add('hov')
+            }
+        }
+        const handleInteractiveLeave = (e: MouseEvent) => {
+            const to = e.relatedTarget as HTMLElement | null
+            if (!to?.closest('a, button')) {
+                document.body.classList.remove('hov')
+            }
+        }
 
         document.addEventListener('mousemove', handleMouseMove)
+        document.addEventListener('mouseover', handleInteractiveEnter)
+        document.addEventListener('mouseout', handleInteractiveLeave)
         animationFrameId = requestAnimationFrame(animateRing)
-
-        interactiveElements.forEach((element) => {
-            element.addEventListener('mouseenter', handleInteractiveEnter)
-            element.addEventListener('mouseleave', handleInteractiveLeave)
-        })
 
         return () => {
             document.removeEventListener('mousemove', handleMouseMove)
+            document.removeEventListener('mouseover', handleInteractiveEnter)
+            document.removeEventListener('mouseout', handleInteractiveLeave)
             cancelAnimationFrame(animationFrameId)
-
-            interactiveElements.forEach((element) => {
-                element.removeEventListener('mouseenter', handleInteractiveEnter)
-                element.removeEventListener('mouseleave', handleInteractiveLeave)
-            })
-
             document.body.classList.remove('hov')
         }
     }, [customCursor])
