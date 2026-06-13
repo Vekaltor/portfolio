@@ -25,7 +25,8 @@ export default function ProjectDetailsModal(props: ProjectDetailsModalProps): JS
     const images = project.previewSrc ?? []
     const title = t(project.titleKey as TranslationKey)
     const gallery = useProjectGallery({total: images.length, isOpen, onClose})
-    const showGallery = images.length > 0;
+    const showGallery = images.length > 0
+
 
     if (!isOpen) return null
 
@@ -65,14 +66,18 @@ export default function ProjectDetailsModal(props: ProjectDetailsModalProps): JS
                         )}
                     </div>
                 ) : (
-                    <div className="grid grid-cols-[auto_auto]">
+                    <div
+                        className={classNames(
+                            "grid",
+                            showGallery && "grid-cols-[1fr_1fr]"
+                        )}>
                         {showGallery && (
                             <div className="p-6 pt-16 h-fit">
                                 <ProjectGallery images={images} title={title} onOpen={gallery.open}/>
                             </div>
                         )}
                         <div
-                            className="flex flex-col p-8 pt-16 border-l border-[var(--border)] space-y-4 max-h-[70svh] max-w-[550px]">
+                            className="flex flex-col p-8 pt-16 border-l border-[var(--border)] space-y-4 max-h-[70svh]">
                             <ProjectInfo project={project}/>
                             <ProjectChips chips={project.chips}/>
                         </div>

@@ -8,6 +8,7 @@ import ProjectLinks from './ProjectLinks.tsx'
 import {useLang} from "../../hooks/useLang.hook.ts";
 import ProjectImagePlaceholder from "./ProjectImagePlaceholder.tsx";
 import {useTruncate} from "../../hooks/useTruncateOptions.hook.ts";
+import LazyImage from '../ui/LazyImage.tsx'
 import ProjectDetailsModal from "./ProjectDetailsModal.tsx";
 
 type Props = SliderItemComponentProps<Project>
@@ -40,11 +41,11 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
                     className="group relative h-[210px] w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg3)]">
                     {project.previewSrc?.length ? (
                         <>
-                            <img
+                            <LazyImage
                                 src={project.previewSrc[0]}
                                 alt={title}
-                                loading="lazy"
-                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                                wrapperClass="h-full w-full"
+                                imgClass="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                             />
 
                             <div

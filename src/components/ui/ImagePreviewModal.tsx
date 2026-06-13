@@ -1,7 +1,7 @@
-import type { JSX } from 'react'
-import { useEffect } from 'react'
-import { createPortal } from 'react-dom'
-import { useMediaQuery } from 'react-responsive'
+import type {JSX} from 'react'
+import {useEffect, useRef, useState} from 'react'
+import {createPortal} from 'react-dom'
+import {useMediaQuery} from 'react-responsive'
 
 type Props = {
     src?: string
@@ -10,36 +10,38 @@ type Props = {
     onClose: () => void
 }
 
-export default function ImagePreviewModal({ src, alt, isOpen, onClose }: Props): JSX.Element | null {
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+export default function ImagePreviewModal({src, alt, isOpen, onClose}: Props): JSX.Element | null {
+    const isMobile = useMediaQuery({query: '(max-width: 768px)'})
+    const imgRef = useRef<HTMLImageElement>(null)
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         if (!isOpen) return
-
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose()
-        }
-
+        setLoaded(false)
+        const handleKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
         document.body.style.overflow = 'hidden'
         window.addEventListener('keydown', handleKeyDown)
-
         return () => {
             document.body.style.overflow = ''
             window.removeEventListener('keydown', handleKeyDown)
         }
     }, [isOpen, onClose])
 
-    const handleClick = (event: any) => {
-        event.stopPropagation();
-        onClose();
-    }
+    // If image already decoded in memory (preloaded by CertSlideItem), show instantly
+    useEffect(() => {
+        if (!isOpen) return
+        const img = imgRef.current
+        if (img?.complete && img.naturalWidth > 0) setLoaded(true)
+    }, [isOpen, src])
+
+    const handleClick = (e: React.MouseEvent) => { e.stopPropagation(); onClose() }
 
     if (!isOpen) return null
 
     return createPortal(
         <div
             className="fixed inset-0 z-[1000] flex items-center justify-center"
-            style={{ background: 'rgba(4,5,4,.93)', backdropFilter: 'blur(12px)' }}
+            style={{background: 'rgba(4,5,4,.93)', backdropFilter: 'blur(12px)'}}
             onClick={handleClick}
         >
             <button
@@ -53,9 +55,7 @@ export default function ImagePreviewModal({ src, alt, isOpen, onClose }: Props):
                 </svg>
             </button>
 
-            <div
-                className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-[var(--border)] bg-[var(--bg2)] px-4 py-1.5 text-[.68rem] font-medium text-[var(--text3)] backdrop-blur-sm"
-            >
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-[var(--border)] bg-[var(--bg2)] px-4 py-1.5 text-[.68rem] font-medium text-[var(--text3)] backdrop-blur-sm">
                 {alt}
             </div>
 
@@ -69,8 +69,12 @@ export default function ImagePreviewModal({ src, alt, isOpen, onClose }: Props):
                 onClick={(e) => e.stopPropagation()}
             >
                 <img
+                    ref={imgRef}
                     src={src}
                     alt={alt}
+                    decoding="async"
+                    onLoad={() => setLoaded(true)}
+                    className={`transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
                     style={{
                         maxWidth: isMobile ? '100%' : '90vw',
                         maxHeight: isMobile ? '100%' : '90vh',

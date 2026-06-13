@@ -1,7 +1,8 @@
 import {createPortal} from 'react-dom'
 import {useLang} from '../../hooks/useLang.hook.ts'
 import LightboxArrow from "../ui/LightBoxArrow.tsx";
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, useState} from "react";
+import LazyImage from '../ui/LazyImage.tsx'
 
 interface ProjectLightboxProps {
     images: string[]
@@ -17,8 +18,13 @@ export default function ProjectLightbox(props: ProjectLightboxProps) {
     const {images, title, activeIndex, onClose, onPrev, onNext, onSelect} = props
     const {t} = useLang()
 
+    const current = images[activeIndex]
+
     const thumbsRef = useRef<HTMLDivElement>(null)
     const touchStart = useRef<number | null>(null)
+    const [imgLoaded, setImgLoaded] = useState(false)
+
+    useEffect(() => { setImgLoaded(false) }, [current])
 
     useEffect(() => {
         const strip = thumbsRef.current
@@ -27,7 +33,6 @@ export default function ProjectLightbox(props: ProjectLightboxProps) {
         active?.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'})
     }, [activeIndex])
 
-    const current = images[activeIndex]
     if (!current) return null
 
     const hasMany = images.length > 1
@@ -91,12 +96,33 @@ export default function ProjectLightbox(props: ProjectLightboxProps) {
                 {hasMany && <LightboxArrow direction="prev" onClick={onPrev}/>}
 
                 <figure className="flex max-h-full max-w-full flex-col items-center gap-3 min-[900px]:gap-4">
-                    <img
-                        src={current}
-                        alt={`${title} - ${t('p.captionImage')} ${activeIndex + 1}`}
-                        className="object-contain ring-1 ring-white/5 shadow-[0_20px_60px_rgba(0,0,0,.5)]"
-                        style={{maxHeight: '58vh', maxWidth: '100%', borderRadius: '14px'}}
-                    />
+                    <div className="relative" style={{maxHeight: '58vh', maxWidth: '100%'}}>
+                        {!imgLoaded && (
+                            <div
+                                className="sk-shimmer flex items-center justify-center rounded-[14px]"
+                                style={{width: '480px', maxWidth: '80vw', height: '270px'}}
+                                aria-hidden="true"
+                            >
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                     stroke="var(--sk-icon)" strokeWidth="1.4"
+                                     strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                            </div>
+                        )}
+                        <img
+                            src={current}
+                            alt={`${title} — ${t('p.captionImage')} ${activeIndex + 1}`}
+                            loading="eager"
+                            decoding="async"
+                            fetchPriority="high"
+                            onLoad={() => setImgLoaded(true)}
+                            className={`object-contain ring-1 ring-white/5 shadow-[0_20px_60px_rgba(0,0,0,.5)] transition-opacity duration-300 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+                            style={{maxHeight: '58vh', maxWidth: '100%', borderRadius: '14px', display: imgLoaded ? 'block' : 'none'}}
+                        />
+                    </div>
                     <figcaption
                         className="rounded-full px-4 py-1.5 text-[.68rem] font-medium tracking-wide backdrop-blur-md min-[900px]:text-[.72rem]"
                         style={{background: 'var(--lb-caption-bg)', color: 'var(--lb-caption-text)'}}>
@@ -126,8 +152,12 @@ export default function ProjectLightbox(props: ProjectLightboxProps) {
                                         : 'opacity-50 ring-1 ring-[var(--lb-ring)] hover:opacity-90 hover:ring-[var(--lb-ring-hover)]'
                                 }`}
                             >
-                                <img src={src} alt={`${t('p.captionImage')} ${i + 1}`}
-                                     className={`h-full w-full object-cover transition-transform duration-300 ${isActive ? 'scale-105' : ''}`}/>
+                                <LazyImage
+                                    src={src}
+                                    alt={`${t('p.captionImage')} ${i + 1}`}
+                                    wrapperClass="h-full w-full"
+                                    imgClass={`h-full w-full object-cover transition-transform duration-300 ${isActive ? 'scale-105' : ''}`}
+                                />
                             </button>
                         )
                     })}

@@ -3,6 +3,7 @@ import type {TranslationKey} from '../../data/i18n.ts'
 import type {Certificate} from '../../types/certificate.interface.ts'
 import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import {useLang} from "../../hooks/useLang.hook.ts";
+import LazyImage from '../ui/LazyImage.tsx'
 
 type Props = SliderItemComponentProps<Certificate>
 
@@ -19,13 +20,11 @@ export default function CertSlideItem(props: Props): JSX.Element {
             >
                 <div className="relative mx-auto w-full max-w-[340px] bg-[var(--bg3)]">
                     <div className="relative aspect-[210/297] w-full overflow-hidden">
-                        <img
+                        <LazyImage
                             src={cert.previewSrc}
                             alt={t(cert.title as TranslationKey)}
-                            loading="lazy"
-                            className={`h-full w-full object-cover transition-transform duration-500 ${
-                                isActive ? 'scale-[1.02]' : 'scale-100'
-                            }`}
+                            wrapperClass="h-full w-full"
+                            imgClass={`h-full w-full object-cover transition-transform duration-500 ${isActive ? 'scale-[1.02]' : 'scale-100'}`}
                         />
                     </div>
                 </div>
