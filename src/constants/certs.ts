@@ -1,7 +1,7 @@
 import type {Certificate} from "../types/certificate.interface.ts";
 
-import hackyeahPreview from '@assets/certs/hackyeah-preview.jpg'
-import efsetPreview from '@assets/certs/efset-preview.png'
+import hackyeahPreview from '@assets/certs/hackyeah-preview.webp'
+import efsetPreview from '@assets/certs/efset-preview.webp'
 import hackyeahPdf from '@assets/certs/hackyeah.pdf'
 import efsetPdf from '@assets/certs/efset.pdf'
 

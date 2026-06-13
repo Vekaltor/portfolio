@@ -1,18 +1,18 @@
 import type {Project} from "../types/project.interface.ts";
 
-import inz_01 from '@assets/projects/no-code/01.png'
-import inz_02 from '@assets/projects/no-code/02.png'
-import inz_03 from '@assets/projects/no-code/03.png'
-import inz_04 from '@assets/projects/no-code/04.png'
-import inz_05 from '@assets/projects/no-code/05.png'
-import inz_06 from '@assets/projects/no-code/06.png'
-import inz_07 from '@assets/projects/no-code/07.png'
-import inz_08 from '@assets/projects/no-code/08.png'
-import finTrack_01 from '@assets/projects/fin-track/01.png'
-import ravintola_01 from '@assets/projects/ravintola/01.png'
-import chat_01 from '@assets/projects/chat/01.png'
-import blogger_01 from '@assets/projects/blogger/01.png'
-import newsApp_01 from '@assets/projects/news-app/01.png'
+import inz_01 from '@assets/projects/no-code/01.webp'
+import inz_02 from '@assets/projects/no-code/02.webp'
+import inz_03 from '@assets/projects/no-code/03.webp'
+import inz_04 from '@assets/projects/no-code/04.webp'
+import inz_05 from '@assets/projects/no-code/05.webp'
+import inz_06 from '@assets/projects/no-code/06.webp'
+import inz_07 from '@assets/projects/no-code/07.webp'
+import inz_08 from '@assets/projects/no-code/08.webp'
+import finTrack_01 from '@assets/projects/fin-track/01.webp'
+import ravintola_01 from '@assets/projects/ravintola/01.webp'
+import chat_01 from '@assets/projects/chat/01.webp'
+import blogger_01 from '@assets/projects/blogger/01.webp'
+import newsApp_01 from '@assets/projects/news-app/01.webp'
 
 export const PROJECTS: Project[] = [
     {

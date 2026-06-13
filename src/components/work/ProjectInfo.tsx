@@ -30,7 +30,6 @@ export default function ProjectInfo({project}: ProjectInfoProps): JSX.Element {
 
             <p className="text-[.85rem] leading-[1.75] text-[var(--text2)]">
                 {desc}
-                {desc}
             </p>
         </div>
     )

@@ -1,8 +1,8 @@
 import type {Recommendation} from "../types/recommendation.interface.ts";
 
-import kacperAvatar from '@assets/people/kacper.jpg'
-import sebastianAvatar from '@assets/people/sebastian.jpg'
-import bartekAvatar from '@assets/people/bartek.jpg'
+import kacperAvatar from '@assets/people/kacper.webp'
+import sebastianAvatar from '@assets/people/sebastian.webp'
+import bartekAvatar from '@assets/people/bartek.webp'
 
 export const TESTIMONIALS: Recommendation[] = [
     {

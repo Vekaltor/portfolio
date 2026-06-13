@@ -14,6 +14,7 @@ function HeroMainTechnologies() {
                         <img
                             src={pill.src}
                             alt={pill.name}
+                            decoding="async"
                             className="h-5 w-5 object-contain"
                             style={pill.invert ? {filter: 'invert(1)'} : {}}
                         />

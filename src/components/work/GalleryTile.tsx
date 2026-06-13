@@ -1,5 +1,6 @@
 import type {JSX} from 'react'
 import {useLang} from '../../hooks/useLang.hook.ts'
+import LazyImage from '../ui/LazyImage.tsx'
 
 interface GalleryTileProps {
     src: string
@@ -19,10 +20,12 @@ export default function GalleryTile(props: GalleryTileProps): JSX.Element {
             onClick={() => onOpen(index)}
             className={`group relative w-full cursor-none overflow-hidden rounded-[10px] border border-[var(--border)] bg-[var(--bg3)] transition-all duration-200 hover:border-[var(--accent)] ${sizeClass}`}
         >
-            <img
+            <LazyImage
                 src={src}
                 alt={alt}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                loading="eager"
+                wrapperClass="h-full w-full"
+                imgClass="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
             <div
                 className="absolute inset-0 flex items-center justify-center bg-[rgba(6,8,6,0)] transition-all duration-300 group-hover:bg-[rgba(6,8,6,.35)]">
