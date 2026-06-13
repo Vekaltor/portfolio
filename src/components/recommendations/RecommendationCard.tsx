@@ -12,7 +12,7 @@ export default function RecommendationCard(props: RecommendationCardProps) {
     const { card } = props
 
     return (
-        <article className="flex flex-col rounded-[16px] border border-[var(--border)] bg-[var(--bg2)] p-8 transition-all hover:-translate-y-[3px] hover:border-[var(--border2)]">
+        <article className="flex flex-col rounded-[16px] border border-[var(--border)] bg-[var(--bg2)] p-8 transition-all hover:border-[var(--border2)]">
             <p className="relative mb-6 flex-1 pt-7 text-[.9rem] leading-[1.86] text-[var(--text2)]">
                 <span className="absolute left-0 top-[-0.2rem] font-display text-[2.8rem] leading-none opacity-50 text-[var(--accent)]">
                   &quot;
@@ -40,7 +40,7 @@ export default function RecommendationCard(props: RecommendationCardProps) {
                         href={card.linkedin}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-[.2rem] inline-block text-[.64rem] text-[var(--accent)] transition-opacity hover:opacity-70 cursor-none"
+                        className="mt-[.2rem] inline-block text-[.64rem] text-[var(--accent)] transition-opacity hover:underline underline-offset-2 hover:opacity-70 cursor-none"
                     >
                         LinkedIn ↗
                     </a>
