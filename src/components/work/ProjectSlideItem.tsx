@@ -6,7 +6,7 @@ import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
 import {useLang} from "../../hooks/useLang.hook.ts";
-import ProjectImagePlaceholder from "./projectImagePlaceholder.tsx";
+import ProjectImagePlaceholder from "./ProjectImagePlaceholder.tsx";
 import {useTruncate} from "../../hooks/useTruncateOptions.hook.ts";
 import ProjectDetailsModal from "./ProjectDetailsModal.tsx";
 
@@ -38,10 +38,10 @@ export default function ProjectSlideItem(props: Props): JSX.Element {
             >
                 <div
                     className="group relative h-[210px] w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg3)]">
-                    {project.previewSrc ? (
+                    {project.previewSrc?.length ? (
                         <>
                             <img
-                                src={Array.isArray(project.previewSrc) ? project.previewSrc[0] : project.previewSrc}
+                                src={project.previewSrc[0]}
                                 alt={title}
                                 loading="lazy"
                                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"

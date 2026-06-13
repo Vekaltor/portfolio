@@ -40,6 +40,7 @@ export default function ProjectImagePlaceholder({ bg, title }: Props): JSX.Eleme
                     className="text-[var(--text2)]"
                 >
                     <polyline points="16 18 22 12 16 6" />
+                    <line x1="14" y1="5" x2="10" y2="19" />
                     <polyline points="8 6 2 12 8 18" />
                 </svg>
             </div>
