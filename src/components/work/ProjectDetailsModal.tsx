@@ -15,15 +15,12 @@ interface ProjectDetailsModalProps {
     onClose: () => void
 }
 
-const toImages = (src: Project['previewSrc']): string[] =>
-    Array.isArray(src) ? src : src ? [src] : []
-
 export default function ProjectDetailsModal(props: ProjectDetailsModalProps): JSX.Element | null {
     const {project, isOpen, onClose} = props
     const {t} = useLang()
     const isPortrait = useMediaQuery({query: '(orientation: portrait) and (max-width: 768px)'})
 
-    const images = toImages(project.previewSrc)
+    const images = project.previewSrc ?? []
     const title = t(project.titleKey as TranslationKey)
     const gallery = useProjectGallery({total: images.length, isOpen, onClose})
 

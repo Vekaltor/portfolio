@@ -4,6 +4,13 @@ import type {Project} from "../types/project.interface.ts";
 import type {Certificate} from "../types/certificate.interface.ts";
 import type {Recommendation} from "../types/recommendation.interface.ts";
 
+import inz_01 from '@assets/projects/no-code/01.png'
+import finTrack_01 from '../assets/projects/fin-track/01.png'
+import ravintola_01 from '../assets/projects/ravintola/01.png'
+import chat_01 from '../assets/projects/chat/01.png'
+import blogger_01 from '../assets/projects/blogger/01.png'
+import newsApp_01 from '../assets/projects/news-app/01.png'
+
 const BASE = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/'
 const icon = (src: string, name: string, invert = false): TechIcon => ({src: `${BASE}${src}`, name, invert})
 
@@ -89,7 +96,8 @@ export const PROJECTS: Project[] = [
         badgeKey: 'p1.b',
         titleKey: 'p1.t',
         descKey: 'p1.d',
-        chips: ['React', 'TypeScript', 'Tailwind CSS', 'REST API', 'Spring Boot', 'Java', 'MySQL'],        previewSrc: '/praca_inzynierska_projekt.png',
+        chips: ['React', 'TypeScript', 'Tailwind CSS', 'REST API', 'Spring Boot', 'Java', 'MySQL'],
+        previewSrc: [inz_01,inz_01,inz_01,inz_01,inz_01,inz_01,inz_01,inz_01,inz_01],
     },
     {
         bg: 'rgba(225,29,72,.16)',
@@ -98,7 +106,7 @@ export const PROJECTS: Project[] = [
         descKey: 'p7.d',
         chips: ['Angular 21', 'TypeScript', 'NgRx', 'RxJS', 'Tailwind CSS', 'Signals', 'Vitest'],
         github: 'https://github.com/Vekaltor/fin-track',
-        previewSrc: '/fin-track-preview.png',
+        previewSrc: [finTrack_01],
     },
     {
         bg: 'rgba(34,197,94,.16)',
@@ -108,7 +116,7 @@ export const PROJECTS: Project[] = [
         chips: ['React', 'JavaScript', 'Recharts', 'Redux Toolkit', 'REST API', 'Admin Panel'],
         github: 'https://github.com/Vekaltor/ravintola',
         live: 'https://ravintola.toadres.pl',
-        previewSrc: '/ravintola-preview.png',
+        previewSrc: [ravintola_01],
     },
     {
         bg: 'rgba(124,58,237,.16)',
@@ -117,7 +125,7 @@ export const PROJECTS: Project[] = [
         descKey: 'p5.d',
         chips: ['React', 'TypeScript', 'Socket.io', 'Redux Toolkit', 'MongoDB', 'Redis', 'styled-components'],
         github: 'https://github.com/Vekaltor/react-chat',
-        previewSrc: '/react_chat-preview.png',
+        previewSrc: [chat_01],
     },
     {
         bg: 'rgba(124,58,237,.10)',
@@ -134,7 +142,7 @@ export const PROJECTS: Project[] = [
         descKey: 'p4.d',
         chips: ['Angular', 'TypeScript', 'PrimeFlex', 'Responsive UI', 'Fast Learning'],
         github: 'https://github.com/Vekaltor/blogger',
-        previewSrc: '/blogger-preview.png',
+        previewSrc: [blogger_01],
         live: 'https://vekaltor.github.io/blogger/',
     },
     {
@@ -144,7 +152,7 @@ export const PROJECTS: Project[] = [
         descKey: 'p3.d',
         chips: ['React', 'Redux Toolkit', 'REST API', 'News API', 'Responsive UI'],
         github: 'https://github.com/Vekaltor/news-app',
-        previewSrc: '/news-app-preview.png',
+        previewSrc: [newsApp_01],
         live: 'https://vekaltor.github.io/news-app',
     },
 ]
