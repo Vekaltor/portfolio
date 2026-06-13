@@ -8,6 +8,8 @@ import {useProjectGallery} from '../../hooks/useProjectGallery.hook.ts'
 import ProjectGallery from './ProjectGallery.tsx'
 import ProjectLightbox from './ProjectLightbox.tsx'
 import ProjectInfo from './ProjectInfo.tsx'
+import ProjectChips from "./ProjectChips.tsx";
+import {classNames} from "../../helpers/classNames.helper.ts";
 
 interface ProjectDetailsModalProps {
     project: Project
@@ -23,16 +25,23 @@ export default function ProjectDetailsModal(props: ProjectDetailsModalProps): JS
     const images = project.previewSrc ?? []
     const title = t(project.titleKey as TranslationKey)
     const gallery = useProjectGallery({total: images.length, isOpen, onClose})
+    const showGallery = images.length > 0;
 
     if (!isOpen) return null
 
     return createPortal(
         <div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-[rgba(6,8,6,.82)] p-4 backdrop-blur-sm min-[900px]:p-8"
+            className={classNames(
+                "fixed inset-0 z-[999] flex items-center justify-center bg-[rgba(6,8,6,.82)] p-4 backdrop-blur-sm min-[900px]:p-8",
+                isPortrait && "pt-24"
+            )}
             onClick={onClose}
         >
             <div
-                className="relative w-full max-w-[1100px] overflow-hidden rounded-[20px] border border-[var(--border)] bg-[var(--bg)] shadow-[0_24px_80px_rgba(0,0,0,.45)]"
+                className={classNames(
+                    "relative w-full max-w-[1100px] overflow-hidden rounded-[20px] border border-[var(--border)] bg-[var(--bg)] shadow-[0_24px_80px_rgba(0,0,0,.45)]",
+                    isPortrait ? "max-h-[100%]" : "max-h-[80%]"
+                )}
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -44,21 +53,28 @@ export default function ProjectDetailsModal(props: ProjectDetailsModalProps): JS
                 </button>
 
                 {isPortrait ? (
-                    <div className="flex max-h-[92vh] flex-col overflow-y-auto">
-                        <div className="min-h-[220px] flex-shrink-0 p-4 pt-12 h-fit">
-                            <ProjectGallery images={images} title={title} onOpen={gallery.open}/>
-                        </div>
-                        <div className="p-6 pt-2">
+                    <div className="flex flex-col h-fit overflow-y-auto p-4 max-h-[80vh]">
+                        <div className="pt-8 space-y-4">
                             <ProjectInfo project={project}/>
+                            <ProjectChips chips={project.chips}/>
                         </div>
+                        {showGallery && (
+                            <div className="pt-6 h-fit">
+                                <ProjectGallery images={images} title={title} onOpen={gallery.open}/>
+                            </div>
+                        )}
                     </div>
                 ) : (
-                    <div className="grid max-h-[88vh] grid-cols-[1.2fr_1fr]">
-                        <div className="max-h-[88vh] p-6 pt-16 h-fit">
-                            <ProjectGallery images={images} title={title} onOpen={gallery.open}/>
-                        </div>
-                        <div className="max-h-[88vh] overflow-y-auto border-l border-[var(--border)] p-8 pt-16">
+                    <div className="grid grid-cols-[auto_auto]">
+                        {showGallery && (
+                            <div className="p-6 pt-16 h-fit">
+                                <ProjectGallery images={images} title={title} onOpen={gallery.open}/>
+                            </div>
+                        )}
+                        <div
+                            className="flex flex-col p-8 pt-16 border-l border-[var(--border)] space-y-4 max-h-[70svh] max-w-[550px]">
                             <ProjectInfo project={project}/>
+                            <ProjectChips chips={project.chips}/>
                         </div>
                     </div>
                 )}

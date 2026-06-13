@@ -1,6 +1,10 @@
 import type {JSX} from 'react'
 import {useLang} from '../../hooks/useLang.hook.ts'
 import GalleryTile from './GalleryTile.tsx'
+import GalleryOverflowTile from '../ui/GalleryOverflowTile.tsx'
+import {useMediaQuery} from "react-responsive";
+
+const MAX_VISIBLE = 6
 
 interface ProjectGalleryProps {
     images: string[]
@@ -8,70 +12,71 @@ interface ProjectGalleryProps {
     onOpen: (index: number) => void
 }
 
-export default function ProjectGallery(props: ProjectGalleryProps): JSX.Element {
-    const {images, title, onOpen} = props
+export default function ProjectGallery({images, title, onOpen}: ProjectGalleryProps): JSX.Element {
     const {t} = useLang()
+    const n = images.length
+    const hasMore = n > MAX_VISIBLE
+    const remaining = n - (MAX_VISIBLE - 1)
 
     const alt = (i: number) => `${title} — ${t('p.captionImage')} ${i + 1}`
-    const tile = (i: number, sizeClass: string, overlay: 'sm' | 'md' = 'md') => (
-        <GalleryTile key={images[i]} src={images[i]} index={i} alt={alt(i)} onOpen={onOpen}
-                     sizeClass={sizeClass} overlay={overlay}/>
-    )
+
+    const isPortrait: boolean = useMediaQuery({query: '(orientation: portrait) and (max-width: 768px)'})
+    const secondRowStart = 1
+    const secondRowEnd = isPortrait ? 1 : 3
+
+    const thirdRowStart = isPortrait ? 1 : 3
+    const thirdRowEnd = hasMore ? 5 : 6
 
     return (
         <div className="flex h-full flex-col gap-3 overflow-y-auto pr-1">
-            {renderLayout()}
+
+            {n >= 1 && (
+                <GalleryTile src={images[0]} index={0} alt={alt(0)} onOpen={onOpen} sizeClass={n === 1 ? 'h-full min-h-[220px]' : 'h-[240px]'}/>
+            )}
+
+            {n === 2 && (
+                <GalleryTile src={images[1]} index={1} alt={alt(1)} onOpen={onOpen} sizeClass="h-[220px]"/>
+            )}
+
+            {n >= 3 && !isPortrait && (
+                <div className="grid grid-cols-2 gap-3">
+                    {images.slice(secondRowStart, secondRowEnd).map((src, i) => (
+                        <GalleryTile
+                            key={src}
+                            src={src}
+                            index={secondRowStart + i}
+                            alt={alt(secondRowStart + i)}
+                            onOpen={onOpen}
+                            sizeClass="h-[170px]"
+                        />
+                    ))}
+                </div>
+            )}
+
+            {n > thirdRowStart && (
+                <div className="grid grid-cols-3 gap-3">
+                    {images.slice(thirdRowStart, thirdRowEnd).map((src, i) => (
+                        <GalleryTile
+                            key={src}
+                            src={src}
+                            index={thirdRowStart + i}
+                            alt={alt(thirdRowStart + i)}
+                            onOpen={onOpen}
+                            sizeClass="aspect-square"
+                        />
+                    ))}
+
+                    {hasMore && (
+                        <GalleryOverflowTile
+                            src={images[MAX_VISIBLE - 1]}
+                            remaining={remaining}
+                            sizeClass="aspect-square"
+                            onOpen={() => onOpen(MAX_VISIBLE - 1)}
+                        />
+                    )}
+                </div>
+            )}
+
         </div>
     )
-
-    function renderLayout(): JSX.Element {
-        const n = images.length
-
-        if (n === 0) {
-            return (
-                <div
-                    className="flex h-full min-h-[200px] items-center justify-center rounded-xl bg-[var(--bg3)] text-[.8rem] text-[var(--text3)]">
-                    {t('p.captionImage')}
-                </div>
-            )
-        }
-
-        if (n === 1) {
-            return tile(0, 'h-full min-h-[220px]')
-        }
-
-        if (n === 2) {
-            return (
-                <>
-                    {tile(0, 'h-[220px]')}
-                    {tile(1, 'h-[220px]')}
-                </>
-            )
-        }
-
-        if (n === 3) {
-            return (
-                <>
-                    {tile(0, 'h-[240px]')}
-                    <div className="grid grid-cols-2 gap-3">
-                        {tile(1, 'h-[150px]')}
-                        {tile(2, 'h-[150px]')}
-                    </div>
-                </>
-            )
-        }
-
-        return (
-            <>
-                {tile(0, 'h-[240px]')}
-                <div className="grid grid-cols-2 gap-3">
-                    {tile(1, 'h-[150px]')}
-                    {tile(2, 'h-[150px]')}
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                    {images.slice(3).map((_, idx) => tile(idx + 3, 'aspect-square', 'sm'))}
-                </div>
-            </>
-        )
-    }
 }

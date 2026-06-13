@@ -19,6 +19,17 @@
     --mobile-menu-card: rgba(255, 255, 255, 0.03);
     --mobile-menu-shadow: -50px 0 140px rgba(0, 0, 0, 0.24);
 
+    --lb-overlay: rgba(4, 6, 4, .94);
+    --lb-surface: rgba(0, 0, 0, .65);
+    --lb-surface-hover: rgba(0, 0, 0, .82);
+    --lb-ring: rgba(255, 255, 255, .16);
+    --lb-ring-hover: rgba(255, 255, 255, .4);
+    --lb-text: #ffffff;
+    --lb-text-muted: rgba(255, 255, 255, .5);
+    --lb-caption-bg: rgba(0, 0, 0, .5);
+    --lb-caption-text: rgba(255, 255, 255, .8);
+    --lb-thumb-offset: #000000;
+
     font-size: 18px;
 }
 
@@ -39,4 +50,15 @@
     --mobile-menu-panel: rgba(255, 255, 255, 0.72);
     --mobile-menu-card: rgba(255, 255, 255, 0.42);
     --mobile-menu-shadow: -50px 0 140px rgba(0, 0, 0, 0.10);
+
+    --lb-overlay: rgba(246, 246, 249, .96);
+    --lb-surface: rgba(210, 210, 225, .7);
+    --lb-surface-hover: rgba(190, 190, 210, .88);
+    --lb-ring: rgba(0, 0, 0, .14);
+    --lb-ring-hover: rgba(0, 0, 0, .3);
+    --lb-text: #0c0c18;
+    --lb-text-muted: rgba(12, 12, 24, .45);
+    --lb-caption-bg: rgba(210, 210, 225, .6);
+    --lb-caption-text: rgba(12, 12, 24, .7);
+    --lb-thumb-offset: #f6f6f9;
 }
