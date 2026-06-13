@@ -89,8 +89,7 @@ export const PROJECTS: Project[] = [
         badgeKey: 'p1.b',
         titleKey: 'p1.t',
         descKey: 'p1.d',
-        chips: ['React', 'Tailwind CSS', 'MySQL', 'Java', 'Spring Boot'],
-        previewSrc: '/praca_inzynierska_projekt.png',
+        chips: ['React', 'TypeScript', 'Tailwind CSS', 'REST API', 'Spring Boot', 'Java', 'MySQL'],        previewSrc: '/praca_inzynierska_projekt.png',
     },
     {
         bg: 'rgba(225,29,72,.16)',
