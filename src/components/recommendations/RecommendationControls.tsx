@@ -30,14 +30,20 @@ export default function RecommendationControls(props: Props) {
                             key={index}
                             type="button"
                             onClick={() => onSelect(index)}
-                            className="cursor-none transition-all"
-                            style={{
-                                width: isActive ? '20px' : '6px',
+                            aria-label={`Rekomendacja ${index + 1}`}
+                            aria-current={isActive ? 'true' : undefined}
+                            className="cursor-none transition-all flex items-center justify-center"
+                            style={{ width: isActive ? '20px' : '6px', height: '44px', background: 'transparent', padding: 0 }}
+                        >
+                            <span style={{
+                                display: 'block',
+                                width: '100%',
                                 height: '6px',
                                 borderRadius: isActive ? '3px' : '50%',
                                 background: isActive ? 'var(--accent)' : 'var(--border2)',
-                            }}
-                        />
+                                transition: 'all 0.3s',
+                            }}/>
+                        </button>
                     )
                 })}
             </div>

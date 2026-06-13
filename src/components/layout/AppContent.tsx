@@ -1,10 +1,13 @@
+import { lazy, Suspense } from 'react'
 import Divider from '../ui/Divider.tsx'
 import Hero from '../Hero'
 import About from '../About'
-import SoftSkills from '../SoftSkills'
-import Work from '../Work'
-import Recommendations from '../Recommendations.tsx'
-import Contact from '../Contact'
+
+// Sekcje below-fold ładowane leniwie — nie blokują pierwszego renderowania
+const Work            = lazy(() => import('../Work'))
+const Recommendations = lazy(() => import('../Recommendations'))
+const SoftSkills      = lazy(() => import('../SoftSkills'))
+const Contact         = lazy(() => import('../Contact'))
 
 function AppContent() {
     return (
@@ -13,13 +16,21 @@ function AppContent() {
             <Divider/>
             <About/>
             <Divider/>
-            <Work/>
+            <Suspense>
+                <Work/>
+            </Suspense>
             <Divider/>
-            <Recommendations/>
+            <Suspense>
+                <Recommendations/>
+            </Suspense>
             <Divider/>
-            <SoftSkills/>
+            <Suspense>
+                <SoftSkills/>
+            </Suspense>
             <Divider/>
-            <Contact/>
+            <Suspense>
+                <Contact/>
+            </Suspense>
         </main>
     )
 }

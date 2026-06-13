@@ -8,6 +8,7 @@ export default function SliderBtn({
   return (
     <button
       onClick={onClick}
+      aria-label={direction === 'prev' ? 'Poprzedni slajd' : 'Następny slajd'}
       className="w-11 h-11 rounded-full border border-[var(--border2)] bg-[var(--bg2)] flex items-center justify-center text-[var(--text2)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accentbg)] transition-all cursor-none"
     >
       <svg

@@ -8,6 +8,7 @@ export default function NavBtn({
   return (
     <button
       onClick={onClick}
+      aria-label={direction === 'prev' ? 'Poprzednia rekomendacja' : 'Następna rekomendacja'}
       className="w-[42px] h-[42px] rounded-full border border-[var(--border2)] bg-[var(--bg2)] flex items-center justify-center text-[var(--text2)] hover:border-[var(--accent)] hover:text-[var(--accent)] hover:bg-[var(--accentbg)] transition-all cursor-none"
     >
       <svg
