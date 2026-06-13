@@ -6,7 +6,7 @@ import type {SliderItemComponentProps} from '../ui/BaseSlider.tsx'
 import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
 import {useLang} from "../../hooks/useLang.hook.ts";
-import ProjectImagePlaceholder from "./projectImagePlaceholder.tsx";
+import ProjectImagePlaceholder from "./ProjectImagePlaceholder.tsx";
 import {useTruncate} from "../../hooks/useTruncateOptions.hook.ts";
 import ProjectDetailsModal from "./ProjectDetailsModal.tsx";
 

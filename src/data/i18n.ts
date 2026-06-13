@@ -17,6 +17,7 @@ export type TranslationKey =
     | 'p4.b' | 'p4.t' | 'p4.d'
     | 'p5.b' | 'p5.t' | 'p5.d'
     | 'p6.b' | 'p6.t' | 'p6.d'
+    | 'p7.b' | 'p7.t' | 'p7.d'
     | 'chy.t' | 'chy.s' | 'chy.l'
     | 'cc1.t' | 'cc2.t'
     | 'ccl'
@@ -95,6 +96,9 @@ const pl: Translations = {
     'p6.b': 'Projekt własny',
     'p6.t': 'React Chat API',
     'p6.d': 'Backend dla aplikacji React Chat. REST API w Express z autoryzacją JWT (tokeny w httponly cookies), walidacją formularzy przez @hapi/joi, wysyłką maili aktywacyjnych przez nodemailer oraz komunikacją w czasie rzeczywistym przez Socket.io. Dane w MongoDB, i18next do internacjonalizacji odpowiedzi.',
+    'p7.b': 'Projekt własny',
+    'p7.t': 'FinTrack',
+    'p7.d': 'Aplikacja do śledzenia finansów osobistych - zarządzanie kontami bankowymi, historia transakcji z filtrowaniem po kategoriach i miesięczny podział wydatków. Projekt zbudowany od zera na najnowszym Angularze (21) wyłącznie w oparciu o nowoczesne API: standalone components, sygnały (signal, computed, effect), nowy input/output zamiast dekoratorów, składnia @if/@for oraz inject() zamiast DI przez konstruktor.',
     'chy.t': 'Finalista HackYeah 2024',
     'chy.s': 'Największy hackathon w Europie · projekt CountryBike. Praca zespołowa, kreatywność i kod w 24h.',
     'chy.l': 'Zobacz projekt',
@@ -197,6 +201,9 @@ const en: Translations = {
     'p6.b': 'Personal project',
     'p6.t': 'React Chat API',
     'p6.d': 'Backend for the React Chat app. REST API built with Express featuring JWT auth (httponly cookies), form validation via @hapi/joi, activation emails via nodemailer, and real-time communication through Socket.io. Data stored in MongoDB with i18next for response internationalisation.',
+    'p7.b': 'Personal project',
+    'p7.t': 'FinTrack',
+    'p7.d': 'A personal finance tracker - manage bank accounts, browse transaction history with category filtering and view a monthly spending breakdown. Built from scratch on the latest Angular (21) using only modern APIs: standalone components, signals (signal, computed, effect), the new input/output instead of decorators, @if/@for control flow and inject() instead of constructor-based DI.',
     'chy.t': 'HackYeah 2024 Finalist',
     'chy.s': "Europe's largest hackathon · CountryBike project. Teamwork, creativity and code in 24h.",
     'chy.l': 'View project',

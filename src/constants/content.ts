@@ -93,6 +93,15 @@ export const PROJECTS: Project[] = [
         previewSrc: '/praca_inzynierska_projekt.png',
     },
     {
+        bg: 'rgba(225,29,72,.16)',
+        badgeKey: 'p7.b',
+        titleKey: 'p7.t',
+        descKey: 'p7.d',
+        chips: ['Angular 21', 'TypeScript', 'NgRx', 'RxJS', 'Tailwind CSS', 'Signals', 'Vitest'],
+        github: 'https://github.com/Vekaltor/fin-track',
+        previewSrc: '/fin-track-preview.png',
+    },
+    {
         bg: 'rgba(34,197,94,.16)',
         badgeKey: 'p2.b',
         titleKey: 'p2.t',
@@ -137,7 +146,7 @@ export const PROJECTS: Project[] = [
         chips: ['React', 'Redux Toolkit', 'REST API', 'News API', 'Responsive UI'],
         github: 'https://github.com/Vekaltor/news-app',
         previewSrc: '/news-app-preview.png',
-        live: 'https://vekaltor.github.io/news-app/en',
+        live: 'https://vekaltor.github.io/news-app',
     },
 ]
 
