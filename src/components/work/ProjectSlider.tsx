@@ -1,4 +1,4 @@
-import {PROJECTS} from '../../constants/content.ts'
+import {PROJECTS} from '../../constants/projects.ts'
 import BaseSlider from '../ui/BaseSlider.tsx'
 import ProjectSlideItem from './ProjectSlideItem.tsx'
 import type {Project} from '../../types/project.interface.ts'

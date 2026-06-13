@@ -1,5 +1,5 @@
 import {useReveal} from '../../hooks/useReveal.hook.ts'
-import {CERTS} from '../../constants/content.ts'
+import {CERTS} from '../../constants/certs.ts'
 import type {Certificate} from '../../types/certificate.interface.ts'
 import BaseSlider from '../ui/BaseSlider.tsx'
 import CertSlideItem from './CertSlideItem.tsx'

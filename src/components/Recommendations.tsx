@@ -3,7 +3,7 @@ import RecommendationSlide from "./recommendations/RecommendationSlide.tsx";
 import RecommendationControls from "./recommendations/RecommendationControls.tsx";
 import {useReveal} from "../hooks/useReveal.hook.ts";
 import {useMediaQuery} from "react-responsive";
-import {TESTIMONIALS} from "../constants/content.ts";
+import {TESTIMONIALS} from "../constants/testimonials.ts";
 import RecommendationHeader from "./recommendations/RecommendationHeader.tsx";
 import {chunkArrayHelper} from "../helpers/chunkArray.helper.ts";
 

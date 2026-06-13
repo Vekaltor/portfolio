@@ -1,4 +1,4 @@
-import {HERO_MAIN_TECHNOLOGY_PILLS} from '../../constants/content.ts'
+import {HERO_MAIN_TECHNOLOGY_PILLS} from '../../constants/techStack.ts'
 
 const HERO_PILL_CLASSES = ['p1', 'p2', 'p3', 'p4', 'p5'] as const
 
