@@ -1,0 +1,48 @@
+@keyframes lbRootIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lbImageIn {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lbCaptionIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lb-root {
+    animation: lbRootIn .22s ease-out;
+}
+
+.lb-image {
+    animation: lbImageIn .28s cubic-bezier(.22, .61, .36, 1);
+}
+
+.lb-caption {
+    animation: lbCaptionIn .35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lb-root, .lb-image, .lb-caption {
+        animation: none;
+    }
+}

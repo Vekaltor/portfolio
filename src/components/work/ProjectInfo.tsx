@@ -2,7 +2,6 @@ import type {JSX} from 'react'
 import type {Project} from '../../types/project.interface.ts'
 import type {TranslationKey} from '../../data/i18n.ts'
 import {useLang} from '../../hooks/useLang.hook.ts'
-import ProjectChips from './ProjectChips.tsx'
 import ProjectLinks from './ProjectLinks.tsx'
 
 interface ProjectInfoProps {
@@ -15,7 +14,7 @@ export default function ProjectInfo({project}: ProjectInfoProps): JSX.Element {
     const desc = t(project.descKey as TranslationKey)
 
     return (
-        <div className="flex flex-col gap-4 overflow-y-auto">
+        <div className="flex flex-col gap-4 overflow-y-auto pr-2">
             <div className="flex items-start justify-between gap-4">
                 <span className="text-[.62rem] font-semibold uppercase tracking-[.06em] text-[var(--text3)]">
                     {t(project.badgeKey as TranslationKey)}
@@ -31,9 +30,8 @@ export default function ProjectInfo({project}: ProjectInfoProps): JSX.Element {
 
             <p className="text-[.85rem] leading-[1.75] text-[var(--text2)]">
                 {desc}
+                {desc}
             </p>
-
-            <ProjectChips chips={project.chips}/>
         </div>
     )
 }

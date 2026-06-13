@@ -1,6 +1,7 @@
 @import "styles/theme.css";
 @import "styles/cursor.css";
 @import "styles/scrollbar.css";
+@import "styles/app-utils.css";
 
 @tailwind base;
 @tailwind components;

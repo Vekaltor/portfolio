@@ -1,6 +1,13 @@
 import type {Project} from "../types/project.interface.ts";
 
 import inz_01 from '@assets/projects/no-code/01.png'
+import inz_02 from '@assets/projects/no-code/02.png'
+import inz_03 from '@assets/projects/no-code/03.png'
+import inz_04 from '@assets/projects/no-code/04.png'
+import inz_05 from '@assets/projects/no-code/05.png'
+import inz_06 from '@assets/projects/no-code/06.png'
+import inz_07 from '@assets/projects/no-code/07.png'
+import inz_08 from '@assets/projects/no-code/08.png'
 import finTrack_01 from '@assets/projects/fin-track/01.png'
 import ravintola_01 from '@assets/projects/ravintola/01.png'
 import chat_01 from '@assets/projects/chat/01.png'
@@ -14,7 +21,7 @@ export const PROJECTS: Project[] = [
         titleKey: 'p1.t',
         descKey: 'p1.d',
         chips: ['React', 'TypeScript', 'Tailwind CSS', 'REST API', 'Spring Boot', 'Java', 'MySQL'],
-        previewSrc: [inz_01],
+        previewSrc: [inz_01,inz_02,inz_03,inz_04,inz_05,inz_06,inz_07,inz_08],
     },
     {
         bg: 'rgba(225,29,72,.16)',
