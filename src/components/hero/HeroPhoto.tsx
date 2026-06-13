@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 import useParallaxAnimate from '../../hooks/useParallaxAnimate.hook.ts'
-import avatar from '@assets/avatar.webp'
+const avatar = '/avatar.webp'
 
 function HeroPhoto() {
     const heroPhotoRef = useRef<HTMLDivElement | null>(null)

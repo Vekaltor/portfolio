@@ -15,10 +15,20 @@
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href="https://kamilwojcik.info.pl/" />
 
+        <!-- Preload LCP image (avatar) — przeglądarka wie o nim przed JS -->
+        <link rel="preload" href="/avatar.webp" as="image" type="image/webp" fetchpriority="high"/>
+
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap"
-              rel="stylesheet"/>
+        <!-- Fonty ładowane nieblokująco — rel=preload + onload trick -->
+        <link rel="preload"
+              href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap"
+              as="style"
+              onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap"
+                  rel="stylesheet"/>
+        </noscript>
     </head>
     <body>
         <div id="root"></div>

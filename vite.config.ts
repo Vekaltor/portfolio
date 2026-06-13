@@ -14,4 +14,20 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor'
+          }
+          if (id.includes('node_modules/react-responsive')) {
+            return 'ui-vendor'
+          }
+        },
+      },
+    },
+    cssMinify: true,
+  },
 })

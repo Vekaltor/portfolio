@@ -13,6 +13,7 @@ export default function GalleryOverflowTile({src, remaining, sizeClass = '', onO
         <button
             type="button"
             onClick={onOpen}
+            aria-label={`Pokaż ${remaining} więcej zdjęć`}
             className={`group relative w-full cursor-none overflow-hidden rounded-[10px] border border-[var(--border)] bg-[var(--bg3)] transition-all duration-200 hover:border-[var(--accent)] ${sizeClass}`}
         >
             <LazyImage
